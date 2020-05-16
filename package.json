@@ -1,0 +1,26 @@
+{
+  "name": "louvr3d",
+  "version": "1.0.0",
+  "description": "3D art exhibit",
+  "main": "server.js",
+  "scripts": {
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
+    "client": "cd client && npm run start",
+    "seed": "node scripts/seedDB.js",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevans0625/LouVR3D.git"
+  },
+  "author": "LouVR3D",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevans0625/LouVR3D/issues"
+  },
+  "homepage": "https://github.com/kevans0625/LouVR3D#readme"
+}
