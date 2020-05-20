@@ -31,7 +31,6 @@ const userSeed = [{
 {
     email: "HarryPo@gmail.com",
       username: "J.K.Balling",
-
     password:"k9g9dfiy&"
 },
 {
