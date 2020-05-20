@@ -22,5 +22,11 @@
   "bugs": {
     "url": "https://github.com/kevans0625/LouVR3D/issues"
   },
-  "homepage": "https://github.com/kevans0625/LouVR3D#readme"
+  "homepage": "https://github.com/kevans0625/LouVR3D#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.16.3",
+    "mongoose": "^5.3.16",
+    "if-env": "^1.0.4"
+  }
 }
