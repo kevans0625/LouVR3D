@@ -1,6 +1,6 @@
 import React from "react";
 import pyramid from "../image/pyramid.jpg"
-
+import M from "materialize-css"
 
 
 const Home = () => {
@@ -15,8 +15,8 @@ const Home = () => {
         <img src={pyramid}/>
         <br />
         <h2>Le LouVR3D{}</h2>
-        <button href="/login">Login</button>
-        <button href="/signup">Sign Up</button>
+        <button type="submit" className="btn btn-default" href="/login">Login</button>
+        <button type="submit" className="btn btn-default" href="/signup">Sign Up</button>
       </div>
       </div>
       </div>
