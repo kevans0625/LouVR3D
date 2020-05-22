@@ -2,7 +2,7 @@ import React from "react";
 import avatar from "../image/Missing_avatar.png"
 
 
-const Profile = () => {
+const Exhibit = () => {
 
 
 
@@ -55,4 +55,4 @@ const Profile = () => {
     )
 }
 
-export default Profile;
+export default Exhibit;
