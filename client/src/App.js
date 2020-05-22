@@ -6,6 +6,7 @@ import Login from './components/Login/login';
 import Signup from './components/Signup/signup';
 import Profile from './components/Profile/profile';
 import Exhibit from './components/Exhibit/exhibit';
+import Favorites from './components/Favorites/favorites';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
       <Route exact path="/signup" component={Signup} />
       <Route exact path="/profile" component={Profile} />
       <Route exact path="/exhibit" component={Exhibit} />
+      <Route exact path="/favorites" component={Favorites} />
       {/* <Route exact path="/users/:id"/>   */}
       </Switch>
       
