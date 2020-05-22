@@ -25,8 +25,11 @@
   "homepage": "https://github.com/kevans0625/LouVR3D#readme",
   "dependencies": {
     "axios": "^0.18.0",
+    "concurrently": "^5.2.0",
     "express": "^4.16.3",
+    "if-env": "^1.0.4",
     "mongoose": "^5.3.16",
-    "if-env": "^1.0.4"
+    "mongoose-unique-validator": "^2.0.3",
+    "react-router-dom": "^5.2.0"
   }
 }
