@@ -1,47 +1,9 @@
-import React, {useState, useEffect} from "react";
-import API from "../utils/API";
+import React from "react";
+import avatar from "../image/Missing_avatar.png"
 
 
 const Profile = () => {
-  const [user, setUser] = useState([])
-  const [formObject, setFormObject] = useState({
-  })
-  
-  // const loadUsers = useCallback( () => {
-  //   console.log(users)
-  // API.getUsers()
-  // .then(res =>
-  //   setUsers(res.data)
-  //   ).catch(err => console.log(err))
-  // }, [users]) 
 
-  useEffect(() => {
-    API.getUser()
-    .then(res =>
-    { 
-    setUser(res.data)}
-    ).catch(err => console.log(err))
-  }, [])
- 
-
-const handleInputChange = event => {
-   const {name, value} = event.target
-   setFormObject({...formObject, [name]: value})
-  };
-
-  const handleFormSubmit = event => {
-    // event.preventDefault();
-    // if(formObject.username && formObject.email && formObject.password){
-    //   API.saveUser({
-    //     username: formObject.username,
-    //     email: formObject.email,
-    //     password: formObject.password
-    //   }, ( M.toast({html: 'Success!'})))
-    //   .catch(err =>{
-    //   M.toast({html: `${err}`}) 
-    //   console.log(err.message)});
-    // } 
-  }
 
 
     return (
@@ -49,48 +11,42 @@ const handleInputChange = event => {
           <div className="container">
            <div className="row">
          <div className="col-md-6 col-md-offset-3">
-        <h2>Welcome{user}</h2>
-        <form className="signup">
-        <div className="form-group">
-            <input 
-            // type="username"  
-            className="form-control" 
-            id="username-input" 
-            placeholder="Username (required)" 
-            onChange={handleInputChange}
-            name="username"/>
-          </div>
-       
-          <div className="form-group">
-            <input 
-            type="email" 
-            className="form-control" 
-            id="email-input" 
-            placeholder="Email (required)" 
-            onChange={handleInputChange}
-            name="email"/>
-          </div>
-     
-          <div className="form-group">
-            <input 
-            type="password" 
-            className="form-control" 
-            id="password-input" 
-            placeholder="Password (required)" 
-            onChange={handleInputChange}
-            name="password"/>
-          </div>
-          {/* <div  id="alert" className="alert alert-danger" role="alert">
-            <span className="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-            <span className="sr-only">Error:</span> <span className="msg"></span>
-          </div> */}
+        <h2>Welcome USER_NAME</h2>
+        
+        
+        <div className="row">
+        <img className="circle" 
+        src={avatar}
+        //  onClick={}
+      />
+      </div>
+
+
+ <div className="row">
+                    <span className="col">
+                            <a className="social margin-left"><i className="social-i fas fa-map-marker-alt"></i>Name</a>
+                           <br/><a  className="social margin-left"><i className="social-i fas fa-envelope-open-text"></i>Email: </a>
+                           <br/><a  className="social margin-left" ><i className="social-i fas fa-phone-alt"></i>Password:</a>
+                        </span>
+                </div>
+        
+        //Upload images into AWS buckets 
+
+        <button className="btn btn-default" href="/favorites">Favorites</button>
+
+        <button  className="btn btn-default" href="/exhibit">Le LouVR3D exhibit </button>
+
+    
           <button type="submit" className="btn btn-default"
-               disabled={!(formObject.username || formObject.email || formObject.password)}
-               onClick={handleFormSubmit}
-               >Sign Up</button>
-        </form>
+              //  disabled={!(formObject.username || formObject.email || formObject.password)}
+              //  onClick={handleFormSubmit}
+               >Upload</button>
+        {/* </form> */}
         <br />
-        <p>Or log in <a href="/login">here</a></p>
+        <button  href="/logout" className="btn btn-default"
+              //  disabled={!(formObject.username || formObject.email || formObject.password)}
+              //  onClick={handleFormSubmit}
+               >Logout</button>
       </div>
       </div>
       </div>
