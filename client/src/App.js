@@ -1,21 +1,24 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
-import Login from './components/Login/Login';
+import Home from './components/Home/home';
+import Login from './components/Login/login';
 import Signup from './components/Signup/signup';
+import Profile from './components/Profile/profile';
 
 function App() {
   return (
-      <Router>
+    <Router>
     <div className="App">
-    <Switch>
-      <Login />
-      <Route exact path={["/", "/users"]}>
-      <Signup />
-      </Route>
-      <Route exact path="/users/:id">  
-          </Route>
-          </Switch>
+      <Switch>
+      {/* <Route exact path={["/", "/users"]}/> */}
+      <Route exact path="/" component={Home} />
+      <Route exact path="/login" component={Login} />
+      <Route exact path="/signup" component={Signup} />
+      <Route exact path="/profile" component={Profile} />
+      {/* <Route exact path="/users/:id"/>   */}
+      </Switch>
+      
     </div>
     </Router>
   );

@@ -33,13 +33,12 @@ const Login = () => {
         }, ( M.toast
             ({
             html: 'Success!'
-            })
-            ))
+            })))
         .catch(err =>{
         M.toast({html: `${err}`}) 
         console.log(err.message)});
       }  
-        window.location.replace("/signup"); 
+        window.location.replace("/profile"); 
     }
   
 
