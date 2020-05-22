@@ -9,7 +9,7 @@ function App() {
       <Router>
     <div className="App">
     <Switch>
-      {/* <Login /> */}
+      <Login />
       <Route exact path={["/", "/users"]}>
       <Signup />
       </Route>
