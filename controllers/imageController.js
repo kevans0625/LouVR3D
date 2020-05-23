@@ -1,11 +1,11 @@
-const aws = require('aws-sdk');
+const AWS = require('aws-sdk');
 const multer = require('multer'); 
 const multerS3 = require('multer-s3')
 const {uuid} = require('uuidv4')
 const config = require("../config")
 
-aws.config.update(config.awsConfig)
-const s3 = new aws.s3();
+AWS.config.update(config.awsConfig)
+const s3 = new AWS.S3();
 
 var upload = multer({
     storage: multerS3({
@@ -22,10 +22,11 @@ var upload = multer({
 const singleFileUpload = upload.single('image');
 
 function uploadToS3(req, res){
-    // req.s3Key = uuid();
+    req.s3Key = uuid();
+    console.log(req);
     let downloadURL = `https://s3-${config.awsConfig.region}.amazonaws.com/louvr3d/${req.s3Key}`
     return new Promise((resolve, reject) => {
-            return singleFileUpload(req, res, err =>{
+            return singleFileUpload(req, res, err => {
                 if(err) return reject(err);
                 return resolve(downloadURL)
             })
@@ -35,6 +36,7 @@ function uploadToS3(req, res){
        
 module.exports = {
     uploadImageToS3: (req, res) => {
+        
         uploadToS3(req, res)
         .then(downloadUrl => {
             console.log(downloadUrl);

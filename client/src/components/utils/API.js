@@ -20,7 +20,7 @@ export default {
   },
    imageUpload: function(imageData) {
       console.log(imageData)
-      return axios.post("/api/uploadImages", imageData)
+      return axios.post("/api/images/upload", imageData)
   },
   allImages: function(Data) {
     console.log(Data)
