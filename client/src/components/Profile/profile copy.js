@@ -23,13 +23,15 @@ class Exhibit extends Component {
         let uploadPromises = this.state.pictures.map(image => {
           let data = new FormData();
          data.append('image', image, image.name);
-         return API.imageUpload(image)
+         console.log(data);
+          return API.imageUpload(data)
            })
            API.allImages(uploadPromises)
            .then(results =>{
              console.log(results);
-            }).catch(e =>{
-              console.log(e)
+             console.log("server response:")
+           }).catch(e =>{
+             console.log(e)
            })
       }
 
@@ -53,10 +55,10 @@ render() {
 
 
  <div className="row">
-                    <span >
-                            <p ><i className="social-i fas fa-map-marker-alt"></i> Name</p>
-                           <br/><p><i className="social-i fas fa-envelope-open-text"></i> Email: </p>
-                           <br/><p><i className="social-i fas fa-unlock-alt"></i> Password:</p>
+                    <span className="col">
+                            <p className="social margin-left" ><i className="social-i fas fa-map-marker-alt"></i>Name</p>
+                           <br/><p  className="social margin-left"><i className="social-i fas fa-envelope-open-text"></i>Email: </p>
+                           <br/><p  className="social margin-left" ><i className="social-i fas fa-phone-alt"></i>Password:</p>
                         </span>
                 </div>
         

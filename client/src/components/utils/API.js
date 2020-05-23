@@ -17,6 +17,13 @@ export default {
   saveUser: function(userData) {
     console.log(userData)
     return axios.post("/api/user", userData);
-
-  }
+  },
+   imageUpload: function(imageData) {
+      console.log(imageData)
+      return axios.post("/api/uploadImages", imageData)
+  },
+  allImages: function(Data) {
+    console.log(Data)
+  return axios.all(Data)
+}
 };

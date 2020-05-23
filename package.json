@@ -24,12 +24,16 @@
   },
   "homepage": "https://github.com/kevans0625/LouVR3D#readme",
   "dependencies": {
+    "aws-sdk": "^2.683.0",
     "axios": "^0.18.0",
     "concurrently": "^5.2.0",
     "express": "^4.16.3",
     "if-env": "^1.0.4",
+    "materialize-css": "^1.0.0-rc.2",
     "mongoose": "^5.3.16",
     "mongoose-unique-validator": "^2.0.3",
-    "react-router-dom": "^5.2.0"
+    "multer": "^1.4.2",
+    "multer-s3": "^2.9.0",
+    "uuidv4": "^6.0.9"
   }
 }

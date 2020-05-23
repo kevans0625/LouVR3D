@@ -17,6 +17,7 @@ const Profile = () => {
         
         <div className="row">
         <img className="circle" 
+        alt=""
         src={pyramid}
         //  onClick={}
       />

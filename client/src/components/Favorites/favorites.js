@@ -19,7 +19,7 @@ const Favorite = () => {
           <div class="col s12 m7">
       <div class="card">
         <div class="card-image">
-          <img src={pyramid}/>
+          <img    alt="" src={pyramid}/>
           <span class="card-title">Card Title</span>
         </div>
         <div class="card-content">
@@ -27,7 +27,7 @@ const Favorite = () => {
           I am convenient because I require little markup to use effectively.</p>
         </div>
         <div class="card-action">
-          <a href="#">This is a link</a>
+          <a href="/">This is a link</a>
         </div>
       </div>
     </div>
