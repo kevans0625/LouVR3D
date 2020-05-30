@@ -1,6 +1,7 @@
 const path = require("path");
 const router = require("express").Router();
 const apiRoutes = require("./api");
+var env = require("dotenv").config();
 
 // API Routes
 router.use("/api", apiRoutes);
