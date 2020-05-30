@@ -1,4 +1,5 @@
 import axios from "axios";
+const METURL = "https://collectionapi.metmuseum.org/public/collection/v1/search?q=";
 
 export default {
   // Gets all users
@@ -25,5 +26,10 @@ export default {
   allImages: function(Data) {
     console.log(Data)
   return axios.all(Data)
-}
+  },
+
+  // Met API Call
+  getMet: function(query) {
+    return axios.get(METURL + query)
+  }
 };
