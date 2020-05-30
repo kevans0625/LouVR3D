@@ -5,7 +5,13 @@ import pyramid from "../image/pyramid.jpg"
 
 const Home = () => {
 
+  const handleLogin = event => {
+      window.location.replace("/login"); 
+  }
 
+  const handleSignup= event => {
+    window.location.replace("/signup"); 
+}
     return (
         <div>
           <div className="container">
@@ -15,8 +21,10 @@ const Home = () => {
         <img    alt="" src={pyramid}/>
         <br />
         <h2>Le LouVR3D{}</h2>
-        <button type="submit" className="btn btn-default" href="/login">Login</button>
-        <button type="submit" className="btn btn-default" href="/signup">Sign Up</button>
+        <button type="submit" className="btn btn-default" href="/login" 
+        onClick={handleLogin}>Login</button>
+        <button type="submit" className="btn btn-default" href="/signup" 
+        onClick={handleSignup}>Sign Up</button>
       </div>
       </div>
       </div>
