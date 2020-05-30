@@ -22,8 +22,9 @@ class Exhibit extends Component {
         console.log(this.state.pictures)
         let uploadPromises = this.state.pictures.map(image => {
           let data = new FormData();
-         data.append('image', image, image.name);
-         return API.imageUpload(image)
+         data.append('image', image);
+         console.log(data.has("image"))
+         return API.imageUpload(data)
            })
            API.allImages(uploadPromises)
            .then(results =>{
