@@ -56,7 +56,7 @@ router.post("/upload", upload.single("image"), function(req, res) {
                 fileLink: s3FileURL + file.originalname, 
                 s3_key: params.Key
             };
-            console.log("Success! You're image has been uploaded to the LouVR3d bucket!")
+            console.log("Success! Your image has been uploaded to the LouVR3d bucket!")
             var image = new IMAGE(newFileUploaded);
             image.save(function(err, newFile) {
                 if (err) {
