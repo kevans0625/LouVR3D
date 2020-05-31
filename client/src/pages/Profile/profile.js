@@ -1,5 +1,5 @@
 import React, {Component}from "react";
-import avatar from "../image/Missing_avatar.png"
+import avatar from "../../components/images/Missing_avatar.png"
 import ImageUploader from 'react-images-upload';
 import API from "../../components/utils/API";
 

@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
-import Home from './components/Home/home';
-import Login from './components/Login/Login';
-import Signup from './components/Signup/signup';
-import Profile from './components/Profile/profile';
-import Exhibit from './components/Exhibit/exhibit';
-import Favorites from './components/Favorites/favorites';
+import Home from './pages/Home/home';
+import Login from './pages/Login/login';
+import Signup from './pages/Signup/signup';
+import Profile from './pages/Profile/profile';
+import Exhibit from './pages/Exhibit/exhibit';
+import Favorites from './pages/Favorites/favorites';
 
 function App() {
   return (

@@ -1,5 +1,5 @@
 import React from "react";
-import pyramid from "../image/pyramid.jpg"
+import pyramid from "../../components/images/pyramid.jpg"
 
 
 const Favorite = () => {

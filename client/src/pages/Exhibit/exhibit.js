@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import pyramid from "../image/pyramid.jpg"
-import API from "../utils/API";
-import { SearchButton, Input} from "../SearchBar/SearchBar"
+import pyramid from "../../components/images/pyramid.jpg"
+import API from "../../components/utils/API";
+import { SearchButton, Input} from "../../components/SearchBar/SearchBar"
 
 
-const Profile = () => {
+const Exhibit = () => {
   const [exhibits, setExhibits] = useState([])
   const [formObject, setFormObject] = useState({
     search: "",
@@ -92,4 +92,4 @@ const Profile = () => {
     )
 }
 
-export default Profile;
+export default Exhibit;
