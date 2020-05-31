@@ -2,7 +2,8 @@ import React, {Component}from "react";
 import avatar from "../image/Missing_avatar.png"
 import ImageUploader from 'react-images-upload';
 import API from "../utils/API";
-class Exhibit extends Component {
+
+class Profile extends Component {
     constructor(props) {
         super(props);
          this.state = { pictures: [] };
@@ -83,4 +84,4 @@ render() {
     );
 }
 }
-export default Exhibit;
+export default Profile;
