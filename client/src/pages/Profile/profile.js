@@ -1,7 +1,7 @@
 import React, {Component}from "react";
 import avatar from "../image/Missing_avatar.png"
 import ImageUploader from 'react-images-upload';
-import API from "../utils/API";
+import API from "../../components/utils/API";
 
 class Profile extends Component {
     constructor(props) {
