@@ -41,6 +41,7 @@ const Exhibit = () => {
 
   const loadImages = (id) => {
     // console.log(id )
+    let imageArr = []
     API.getMetImages(id)
     .then(res => {
       console.log(res)
@@ -48,8 +49,9 @@ const Exhibit = () => {
         throw new Error(res.status); 
       } else {
         let image = res.data.primaryImage
-
-        console.log(image)
+        
+        imageArr.push(image)
+        console.log(imageArr)
       }
     })
     
