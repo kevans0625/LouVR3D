@@ -10,14 +10,6 @@ const Signup = () => {
     password: "",
    error: ""
   })
-  
-  // const loadUsers = useCallback( () => {
-  //   console.log(users)
-  // API.getUsers()
-  // .then(res =>
-  //   setUsers(res.data)
-  //   ).catch(err => console.log(err))
-  // }, [users]) 
 
   useEffect(() => {
     API.getUsers()
