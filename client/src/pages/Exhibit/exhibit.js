@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import pyramid from "../../components/images/pyramid.jpg"
-import API from "../../components/utils/API";
+import API from "../../utils/API";
 import { SearchButton, Input} from "../../components/SearchBar/SearchBar"
 
 
