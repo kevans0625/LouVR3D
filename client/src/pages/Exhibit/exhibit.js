@@ -1,14 +1,15 @@
 import React, { useState } from "react";
-import pyramid from "../image/pyramid.jpg"
-import API from "../utils/API";
-import { SearchButton, Input} from "../SearchBar/SearchBar"
+import pyramid from "../../components/images/pyramid.jpg"
+import API from "../../utils/API";
+import { SearchButton, Input} from "../../components/SearchBar/SearchBar"
 
 
-const Profile = () => {
+const Exhibit = () => {
   const [exhibits, setExhibits] = useState([])
   const [formObject, setFormObject] = useState({
     search: "",
     results: [],
+    IDs: [],
     error: ""
   })
 
@@ -20,14 +21,16 @@ const Profile = () => {
         throw new Error(res.status); 
       } else {
         let results = res.data.objectIDs
-        results = results.map(result => {
-          result = {
-            key: result.id,
-            id: result.id,
-          }
-          return loadImages(result);
+        results = results.map(ID => {
+          // result 
+          // = {
+          //   key: result.id,
+          //   id: result.id,
+          // }
+          // console.log(ID)
+          loadImages(ID);
         })
-        setExhibits({results: results, error: ""})
+        setExhibits({IDs: results, error: ""})
       }
     })
   }
@@ -36,7 +39,21 @@ const Profile = () => {
 // load image generates images
 // form submit loadimages 
 
-  const loadImages = (result) => {
+  const loadImages = (id) => {
+    // console.log(id )
+    let imageArr = []
+    API.getMetImages(id)
+    .then(res => {
+      console.log(res)
+      if (res.data === "error") {
+        throw new Error(res.status); 
+      } else {
+        let image = res.data.primaryImage
+        
+        imageArr.push(image)
+        console.log(imageArr)
+      }
+    })
     
   }
 
@@ -92,4 +109,4 @@ const Profile = () => {
     )
 }
 
-export default Profile;
+export default Exhibit;

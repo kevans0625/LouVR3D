@@ -1,5 +1,6 @@
 import axios from "axios";
-const METURL = "https://collectionapi.metmuseum.org/public/collection/v1/search?q=";
+const METURL = "https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=";
+const METOBJECTURL = "https://collectionapi.metmuseum.org/public/collection/v1/objects/";
 
 export default {
   // Gets all users
@@ -30,6 +31,9 @@ export default {
 
   // Met API Call
   getMet: function(query) {
-    return axios.get(METURL + query)
+    return axios.get(METURL+ query)
+  },
+  getMetImages: function(id){
+    return axios.get(METOBJECTURL+ id)
   }
 };

@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-import API from "../utils/API";
+import API from "../../utils/API";
 import M from "materialize-css"
 
 const Signup = () => {
@@ -10,14 +10,6 @@ const Signup = () => {
     password: "",
    error: ""
   })
-  
-  // const loadUsers = useCallback( () => {
-  //   console.log(users)
-  // API.getUsers()
-  // .then(res =>
-  //   setUsers(res.data)
-  //   ).catch(err => console.log(err))
-  // }, [users]) 
 
   useEffect(() => {
     API.getUsers()
