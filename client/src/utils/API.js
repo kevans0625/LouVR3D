@@ -34,6 +34,6 @@ export default {
     return axios.get(METURL+ query)
   },
   getMetImages: function(id){
-    return axios.get(METOBJECTURL+ id)
+    return axios.post(METOBJECTURL + id)
   }
 };
