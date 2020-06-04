@@ -64,6 +64,11 @@ const Exhibit = () => {
 
   const handleFormSubmit = event => {
     event.preventDefault();
+    // API.saveImage({
+    //   title: formObject.data.title,
+    //   description: formObject.data.description,
+    //   image: formObject.data.primaryImage
+    // })
     loadExhibits(formObject.search)
   }
 
@@ -92,7 +97,7 @@ const Exhibit = () => {
         onClick={handleFormSubmit}
         />
       </form>
-
+      
 
         <button className="btn btn-default" href="/favorites">Favorites</button>
       
