@@ -30,6 +30,7 @@ const Exhibit = () => {
           // console.log(ID)
           loadImages(ID);
         })
+        // loadImages([results]);
         setExhibits({IDs: results, error: ""})
       }
     })
