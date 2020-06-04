@@ -29,6 +29,7 @@ const Exhibit = () => {
           // }
           // console.log(ID)
           loadImages(ID);
+          // const filterArr = results.filter(result => result.total > 80)
         })
         setExhibits({IDs: results, error: ""})
       }
