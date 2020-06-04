@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import M from "materialize-css";
-import Login from "./login";
+import Signup from "./signup";
 import "materialize-css/dist/css/materialize.min.css";
 
-class LoginModal extends Component {
+class SignupModal extends Component {
   
   componentDidMount() {
     const options = {
@@ -56,7 +56,7 @@ class LoginModal extends Component {
                         modal-fixed-footer to the "modal" div*/}
           <div className="modal-content">
           <h4>Login to Le LouVr3d</h4>
-          <Login/>
+          <Signup/>
          
           </div>
          
@@ -66,4 +66,4 @@ class LoginModal extends Component {
   }
 }
 
-export default LoginModal;
+export default SignupModal;
