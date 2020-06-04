@@ -6,3 +6,7 @@ const exhibitSchema = new Schema({
     description: {type: String},
     image: {type: String}
 })
+
+const Exhibit = mongoose.model("Exhibit", exhibitSchema);
+
+module.exports = Exhibit;
