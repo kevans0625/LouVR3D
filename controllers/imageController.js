@@ -23,6 +23,7 @@ function uploadToS3(req, res){
     req.s3Key = uuid();
     console.log(req);
     let downloadURL = `https://s3-${config.awsConfig.region}.amazonaws.com/louvr3d/${req.s3Key}`
+    console.log(downloadURL)
     return new Promise((resolve, reject) => {
             return singleFileUpload(req, res, err => {
                 if(err) return reject(err);
