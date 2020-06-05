@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 
 const favoriteSchema = new Schema({
     title: {type: String},
-    description: {type: String},
+    artist: {type: String},
+    department: {type: String},
     image: {type: String}
 })
 
