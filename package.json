@@ -24,7 +24,13 @@
   },
   "homepage": "https://github.com/kevans0625/LouVR3D#readme",
   "dependencies": {
+<<<<<<< HEAD
     "add": "^2.0.6",
+=======
+    "aframe": "^1.0.4",
+    "aframe-environment-component": "^2.0.0",
+    "aframe-react": "^4.4.0",
+>>>>>>> a9e382e33c7bf7f4313b5fdb2d35b3ff9c038411
     "aws-sdk": "^2.683.0",
     "axios": "^0.18.0",
     "bcrypt": "^4.0.1",

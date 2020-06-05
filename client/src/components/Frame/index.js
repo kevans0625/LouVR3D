@@ -3,6 +3,11 @@ import 'aframe'
 import {Entity} from "aframe-react"
 
 function Frame(props) {
+
+  function handleClick(element) {
+    console.log(element.target.id)
+  }
+
     return(
         <Entity
         geometry={{ primitive: 'box', width: 1, depth: .25 }}
