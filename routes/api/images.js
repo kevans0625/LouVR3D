@@ -6,6 +6,7 @@ const multer = require("multer");
 var AWS = require("aws-sdk");
 var storage = multer.memoryStorage();
 var upload =multer({ storage: storage });
+
 router.route("/").get((req, res, next) => {
     IMAGE.find(
     {}, 
@@ -21,6 +22,7 @@ router.route("/").get((req, res, next) => {
     }
     );
 });
+
 router.route("/:id").get((req, res, next) => {
     IMAGE.findById(req.params,id, (err, go) => {
         if (err) {
@@ -29,6 +31,7 @@ router.route("/:id").get((req, res, next) => {
         res.json(go);
     });
 });
+
 router.post("/upload", upload.single("image"), function(req, res) {
     const file = req.file;
     const s3FileURL = process.env.AWS_Uploaded_File_URL_LINK;
@@ -37,8 +40,10 @@ router.post("/upload", upload.single("image"), function(req, res) {
         secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
         region: process.env.AWS_REGION
     });
+
     // console.log(process.env.AWS_ACCESS_KEY_ID);
     // console.log(process.env.AWS_SECRET_ACCESS_KEY);
+    
     var params = {
         Bucket: process.env.AWS_BUCKET_NAME,
         Key: file.originalname,
@@ -46,6 +51,7 @@ router.post("/upload", upload.single("image"), function(req, res) {
         ContentType: file.mimetype,
         ACL: "public-read"
     };
+
     s3bucket.upload(params, function(err, data) {
         if (err) {
             res.status(500).json({ error: true, Message: err })
@@ -66,6 +72,7 @@ router.post("/upload", upload.single("image"), function(req, res) {
         }
     });
 });
+
 router.route("/edit/:id").put((req, res, next) => {
     IMAGE.findByIdAndUpate(
         req.params.id, 
@@ -79,6 +86,7 @@ router.route("/edit/:id").put((req, res, next) => {
         }
     );
 });
+
 router.route("/:id").delete((req, res, next) => {
     IMAGE.findByIdAndRemove(
         req.params.id, 
@@ -91,10 +99,12 @@ router.route("/:id").delete((req, res, next) => {
                 secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
                 region: process.env.AWS_REGION
             });
+
             let params = {
                 Bucket: process.env.AWS_BUCKET_NAME,
                 Key: file.s3_key
             };
+
             s3bucket.deleteObject(params, (err, data) => {
                 if (err) {
                     console.log(err);
@@ -109,4 +119,5 @@ router.route("/:id").delete((req, res, next) => {
         }
     );
 });
+
 module.exports = router;
