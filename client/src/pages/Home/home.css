@@ -1,0 +1,16 @@
+canvas{
+    z-index: -1;
+    position: absolute;
+}
+
+.container{
+    z-index: 1;
+}
+
+#pyramid{
+    opacity: 0;
+}
+
+h2{
+    color: aliceblue;
+}

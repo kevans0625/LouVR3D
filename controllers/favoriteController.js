@@ -5,7 +5,8 @@ module.exports = {
          db.Favorite
          .create({
              title: req.body.title,
-             descrition: req.body.descrition,
+             artist: req.body.artist,
+             department: req.body.department,
              image: req.body.image
          })
         .then(dbModel => res.json(dbModel))
