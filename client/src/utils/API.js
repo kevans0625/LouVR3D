@@ -37,7 +37,13 @@ export default {
     return axios.get(METURL + query)
   },
   getMetImages: function(id){
-    return axios.post(METOBJECTURL + id)
+
+    return axios.get(METOBJECTURL+ id)
+  },
+
+  // Save image to mongo
+  saveImage: function(imageData) {
+    return axios.post("/api/exhibits", imageData)
 
   }
 };
