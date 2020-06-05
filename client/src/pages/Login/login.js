@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import API from "../../utils/API";
 import M from "materialize-css"
+import Modal from "../Signup/modal";
 
 const Login = () => {
     const [users, setUsers] = useState([])
@@ -75,6 +76,7 @@ const Login = () => {
         </button>
       </form>
       <br/>
+      <Modal/>
       <p>Sign Up <a href="/signup">here</a></p>
     </div>
     </div>
