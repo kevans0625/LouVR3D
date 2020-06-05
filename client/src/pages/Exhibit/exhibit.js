@@ -12,6 +12,7 @@ const Exhibit = () => {
   })
   const loadExhibits = (exhibit) => {
     API.getMet(exhibit)
+
       .then(res => {
         { console.log(res) }
         if (res.data === "error") {
@@ -26,6 +27,7 @@ const Exhibit = () => {
       .then((data) => {
         console.log(data);
       })
+
   }
   // new api get images
   // load exhibits send response to load images

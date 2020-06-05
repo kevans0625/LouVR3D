@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import API from "../../utils/API";
 import M from "materialize-css"
+import Modal from "../Login/modal";
 
 const Signup = () => {
   const [users, setUsers] = useState([])
@@ -86,6 +87,7 @@ const handleInputChange = event => {
                >Sign Up</button>
         </form>
         <br />
+        {/* <Modal/> */}
         <p>Or log in <a href="/login">here</a></p>
       </div>
       </div>
