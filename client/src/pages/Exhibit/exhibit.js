@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import pyramid from "../../components/images/pyramid.jpg"
 import API from "../../utils/API";
-import { SearchButton, Input } from "../../components/SearchBar/SearchBar"
+import { SearchButton, Input } from "../../components/SearchBar/SearchBar";
+import {List, ListItem} from "../../components/List"
+import DeleteBtn from "../../components/DeleteBtn/index"
 const Exhibit = () => {
   const [exhibits, setExhibits] = useState([])
   const [formObject, setFormObject] = useState({
     search: "",
     results: [],
-    IDs: {},
+    IDs: [],
     error: ""
   })
   const loadExhibits = (exhibit) => {
@@ -26,6 +28,22 @@ const Exhibit = () => {
       })
       .then((data) => {
         console.log(data);
+        let displayResults = data.map(art => {
+           art = 
+           {
+            key: art.objectID, 
+            artist: art.artistDisplayName, 
+            title: art.title, 
+            department: art.department,
+            image: art.primaryImage
+          }
+          return art
+        })
+        {console.log(displayResults)}
+        
+        setExhibits({
+          results: displayResults
+        });
       })
 
   }
@@ -37,7 +55,7 @@ const Exhibit = () => {
     return API.getMetImages(id)
       .then(res => {
         if (res.data === "error") { throw new Error(res.status) }
-        return res.data.primaryImage
+        return res.data
       })
   }
   const handleInputChange = event => {
@@ -53,6 +71,16 @@ const Exhibit = () => {
     // })
     loadExhibits(formObject.search)
   }
+
+  // const addArt = event => {
+    
+  //   console.log(exhibits)
+  //   // API.saveImage({
+  //   //   title: resul
+  //   // })
+  // }
+
+let displayArt = exhibits.results;
   return (
     <div>
       <div className="container">
@@ -76,6 +104,20 @@ const Exhibit = () => {
               />
             </form>
             <div >
+              {displayArt ? (
+                <List>
+                  {console.log(exhibits)}
+                {displayArt.map(exhibit => (
+                  <ListItem key={displayArt.key}>
+                    {exhibit.title}
+                    {/* <DeleteBtn onClick={() => addArt(exhibit.key)} /> */}
+                  </ListItem>
+                  
+                ))}
+                </List>
+              ) : (
+                <h1>nope</h1>
+              )}
             </div>
             <button className="btn btn-default" href="/favorites">Favorites</button>
             <br />
