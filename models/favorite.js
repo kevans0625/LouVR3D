@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const exhibitSchema = new Schema({
+const favoriteSchema = new Schema({
     title: {type: String},
     description: {type: String},
     image: {type: String}
 })
 
-const Exhibit = mongoose.model("Exhibit", exhibitSchema);
+const Favorite = mongoose.model("Favorite", favoriteSchema);
 
-module.exports = Exhibit;
+module.exports = Favorite;

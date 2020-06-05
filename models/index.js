@@ -1,3 +1,5 @@
 module.exports= {
-    User: require("./user")
+    User: require("./user"),
+    Favorite: require("./favorite"),
+    Images: require("./images")
 };
