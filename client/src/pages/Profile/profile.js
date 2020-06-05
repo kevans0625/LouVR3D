@@ -3,6 +3,7 @@ import avatar from "../../components/images/Missing_avatar.png"
 import ImageUploader from 'react-images-upload';
 import API from "../../utils/API";
 // import NewFileUpload from "../../components/NewFileUpload/newFileUpload";
+
 class Profile extends Component {
     constructor(props) {
         super(props);
