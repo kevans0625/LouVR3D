@@ -2,7 +2,7 @@ const AWS = require('aws-sdk');
 const multer = require('multer'); 
 const multerS3 = require('multer-s3')
 const {uuid} = require('uuidv4')
-const config = require("../config")
+const config = require("../client/src/config")
 AWS.config.update(config.awsConfig)
 const s3 = new AWS.S3();
 

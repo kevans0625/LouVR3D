@@ -2,6 +2,7 @@ import React, {Component}from "react";
 import avatar from "../../components/images/Missing_avatar.png"
 import ImageUploader from 'react-images-upload';
 import API from "../../utils/API";
+// import NewFileUpload from "../../components/NewFileUpload/newFileUpload";
 
 class Profile extends Component {
     constructor(props) {
@@ -73,6 +74,7 @@ render() {
                >Upload</button>
         {/* </form> */}
         <br />
+        {/* <NewFileUpload /> */}
         <button  href="/logout" className="btn btn-default"
               //  disabled={!(formObject.username || formObject.email || formObject.password)}
               //  onClick={handleFormSubmit}
