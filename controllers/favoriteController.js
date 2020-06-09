@@ -7,7 +7,8 @@ module.exports = {
              title: req.body.title,
              artist: req.body.artist,
              department: req.body.department,
-             image: req.body.image
+             image: req.body.image,
+             key: req.body.key
          })
         .then(dbModel => res.json(dbModel))
         .catch(err => {console.log(err) 

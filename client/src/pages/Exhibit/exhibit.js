@@ -3,7 +3,9 @@ import pyramid from "../../components/images/pyramid.jpg"
 import API from "../../utils/API";
 import { SearchButton, Input } from "../../components/SearchBar/SearchBar";
 import {List, ListItem} from "../../components/List"
-import DeleteBtn from "../../components/DeleteBtn/index"
+import DeleteBtn from "../../components/DeleteBtn/index";
+import { useParams} from "react-router-dom"
+
 const Exhibit = () => {
   const [exhibits, setExhibits] = useState([])
   const [formObject, setFormObject] = useState({
@@ -72,13 +74,22 @@ const Exhibit = () => {
     loadExhibits(formObject.search)
   }
 
-  // const addArt = event => {
+  let { id } = useParams()
+
+  const addArt = (key) => {
     
-  //   console.log(exhibits)
-  //   // API.saveImage({
-  //   //   title: resul
-  //   // })
-  // }
+    console.log(exhibits.results.find(result => result.key === key))
+    const savedImage = exhibits.results.find(result => result.key === key)
+    console.log(savedImage)
+      API.saveImage({
+        title: savedImage.title,
+        artist: savedImage.artist,
+        department: savedImage.department,
+        image: savedImage.image
+      })
+
+      .then(console.log(savedImage.title + " Saved to database"))
+  }
 
 let displayArt = exhibits.results;
   return (
@@ -109,8 +120,10 @@ let displayArt = exhibits.results;
                   {console.log(exhibits)}
                 {displayArt.map(exhibit => (
                   <ListItem key={displayArt.key}>
-                    {exhibit.title}
-                    {/* <DeleteBtn onClick={() => addArt(exhibit.key)} /> */}
+                    {exhibit.title} by {exhibit.artist}
+                    Department: {exhibit.department}
+                    {exhibit.image}
+                    <DeleteBtn onClick={() => addArt(exhibit.key)} />
                   </ListItem>
                   
                 ))}
