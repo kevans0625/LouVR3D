@@ -24,7 +24,7 @@ app.use(routes);
 
 // Connect to the Mongo DB
 mongoose
-.connect(process.env.MONGODB_URI || "mongodb://localhost/Louvr3dusers", {useNewUrlParser: true})
+.connect(process.env.MONGODB_URI || "mongodb://localhost/Louvr3dusers", {useNewUrlParser: true,  useUnifiedTopology: true, useCreateIndex: true})
 .catch(err => console.log(err));
 
 // Start the API server
