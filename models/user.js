@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
-// const bcrypt = require("bcrypt");
+const bcrypt = require("bcrypt");
 const Schema = mongoose.Schema;
 const uniqueValidator = require('mongoose-unique-validator');
-// let SALT_WORK_FACTOR = 10;
+let SALT_WORK_FACTOR = process.env.SALT_WORK_FACTOR;
 
 const userSchema = new Schema({
     username: {
@@ -43,12 +43,12 @@ userSchema.pre('save', function(next) {
     });
 });
 
-userSchema.methods.comparePassword = function(candidatePassword, cb) {
-    bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
-        if (err) return cb(err);
-        cb(null, isMatch);
-    });
-};
+// userSchema.methods.comparePassword = function(candidatePassword, cb) {
+//     bcrypt.compare(candidatePassword, this.password, function(err, isMatch) {
+//         if (err) return cb(err);
+//         cb(null, isMatch);
+//     });
+// };
 
 const User = mongoose.model("User", userSchema);
 User.createIndexes();

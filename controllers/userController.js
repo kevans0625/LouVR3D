@@ -13,7 +13,7 @@ module.exports = {
         const existingUser =  await db.User.findOne({email: email})
         console.log(existingUser)
         if (!existingUser == null){
-            return res.status(402).json({msg: "An account with this email address already exist."})
+            return res.status(400).json({msg: "An account with this email address already exist."})
         }
          
         db.User
@@ -36,12 +36,13 @@ module.exports = {
         })
     
 },        
-    findAll: function(req, res) {
+    findAll:   async (req, res) => {
           db.User
             .find(req.query)
             .sort({ date: -1 })
             .then(dbModel => res.json(dbModel))
-            .catch(err => res.status(422).json(err));
+            .catch(err => res.status(422).json({ error: err.message
+            }));
         },
     findById: function(req, res) {
           db.User

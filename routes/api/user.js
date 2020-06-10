@@ -6,4 +6,8 @@ router.route("/")
   .get(userController.findAll)
   .post(userController.create)
 
+
+   
+
+
 module.exports = router

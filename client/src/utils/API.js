@@ -7,7 +7,8 @@ const harvardAPIKey = "5e4cb7f0-a534-11ea-888a-71ff56d3b1a0";
 
 export default {
   // Gets all users
-  getUsers: function() {
+  getUsers: function(userData) {
+    console.log(userData)
     return axios.get("/api/user");
   },
   // Gets the User with the given id
@@ -23,6 +24,11 @@ export default {
     console.log(userData)
     return axios.post("/api/user", userData);
   },
+  // Gets all users
+ loginUser: function(userData) {
+    console.log(userData)
+    return axios.post("/api/login", userData);
+    },
    imageUpload: function(imageData) {
       console.log(imageData)
       return axios.post("/api/images/upload", imageData)
