@@ -120,16 +120,16 @@ let displayArt = exhibits.results;
                   {console.log(exhibits)}
                 {displayArt.map(exhibit => (
                   <ListItem key={displayArt.key}>
-                    {exhibit.title} by {exhibit.artist}
-                    Department: {exhibit.department}
-                    {exhibit.image}
+                    {exhibit.title} by {exhibit.artist ? (exhibit.artist) : ("artist unknown")}
+                    
+                    <a href={exhibit.image} />
                     <DeleteBtn onClick={() => addArt(exhibit.key)} />
                   </ListItem>
                   
                 ))}
                 </List>
               ) : (
-                <h1>nope</h1>
+                <h1>Search for something!</h1>
               )}
             </div>
             <button className="btn btn-default" href="/favorites">Favorites</button>
