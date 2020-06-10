@@ -4,7 +4,10 @@ import API from "../../utils/API";
 import { SearchButton, Input } from "../../components/SearchBar/SearchBar";
 import {List, ListItem} from "../../components/List"
 import DeleteBtn from "../../components/DeleteBtn/index";
-import { useParams} from "react-router-dom"
+import { useParams} from "react-router-dom";
+import { Col, Row, Container } from "../../components/Grid";
+
+
 
 const Exhibit = () => {
   const [exhibits, setExhibits] = useState([])
@@ -114,24 +117,28 @@ let displayArt = exhibits.results;
                 onClick={handleFormSubmit}
               />
             </form>
-            <div >
+            <Row >
+              <Col size="md-6 sm-12">
               {displayArt ? (
                 <List>
                   {console.log(exhibits)}
                 {displayArt.map(exhibit => (
                   <ListItem key={displayArt.key}>
-                    {exhibit.title} by {exhibit.artist}
-                    Department: {exhibit.department}
-                    {exhibit.image}
+                    
+                    {exhibit.title} by {exhibit.artist ? (exhibit.artist) : ("Artist Unknown")}
+                    <Col size="md-6 sm-12">
+                    <img src={exhibit.image} style={{width: "100px"}} />
                     <DeleteBtn onClick={() => addArt(exhibit.key)} />
+                    </Col>
                   </ListItem>
                   
                 ))}
                 </List>
               ) : (
-                <h1>nope</h1>
+                <h1>Search for something!</h1>
               )}
-            </div>
+              </Col>
+            </Row>
             <button className="btn btn-default" href="/favorites">Favorites</button>
             <br />
             <button href="/logout" className="btn btn-default"

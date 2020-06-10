@@ -7,11 +7,11 @@
 }
 
 .list-overflow-container ul {
-  margin: 0;
+  margin: 10px;
 }
 
 .list-overflow-container li {
-  border-radius: 0px;
+  border-radius: 10px;
   border-left: none;
   border-right: none;
 }

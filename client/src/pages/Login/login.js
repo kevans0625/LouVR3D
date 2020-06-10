@@ -28,18 +28,27 @@ const Login = () => {
     const handleFormSubmit = event => {
       event.preventDefault();
       if(formObject.username && formObject.password){
-        API.getUser({
+        API.loginUser({
           username: formObject.username,
           password: formObject.password
-        }, ( M.toast
-            ({
-            html: 'Success!'
-            })))
-        .catch(err =>{
-        M.toast({html: `${err}`}) 
-        console.log(err.message)});
+        }).then((res) =>{
+          console.log(res) 
+          if (res.status === 200){
+            return  M.toast({html: 'Success!'})
+          }
+            return  M.toast({html: 'Invalid credentials!'})
+        
+
+        })
+        // , ( M.toast
+      //       ({
+      //       html: 'Success!'
+      //       })))
+      //   .catch(err =>{
+      //   M.toast({html: `${err}`}) 
+      //   console.log(err.message)});
       }  
-        window.location.replace("/profile"); 
+        // window.location.replace("/profile");
     }
   
 
@@ -55,7 +64,7 @@ const Login = () => {
           <input 
           // type="username"  
           className="form-control" 
-          id="username-input" 
+          id="username-login-input"
           placeholder="Username (required)" 
           onChange={handleInputChange}
           name="username"/>
@@ -64,7 +73,7 @@ const Login = () => {
           <input 
           type="password" 
           className="form-control" 
-          id="password-input" 
+          id="password-login-input" 
           placeholder="Password (required)" 
           onChange={handleInputChange}
           name="password"/>
