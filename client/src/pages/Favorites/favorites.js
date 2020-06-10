@@ -4,11 +4,7 @@ import pyramid from "../../components/images/pyramid.jpg"
 
 const Favorite = () => {
 
- // API.saveImage({
-    //   title: formObject.data.title,
-    //   description: formObject.data.description,
-    //   image: formObject.data.primaryImage
-    // })
+
 
     return (
         <div>
