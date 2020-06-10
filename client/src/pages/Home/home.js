@@ -23,11 +23,16 @@ const Home = () => {
             <h2>Welcome{}</h2>
             <img id="pyramid" alt="" src={pyramid} />
             <br />
-            <h2>Le LouVR3D{}</h2>
+            <h2>Le LouVr3D{}</h2>
+            <div className="col s6">
             <button type="submit" className="btn btn-default" href="/login"
-              onClick={handleLogin}>Login</button>
+              onClick={handleLogin}>Log In</button>
+              </div>
+              <div className="col s6">
+                
             <button type="submit" className="btn btn-default" href="/signup"
               onClick={handleSignup}>Sign Up</button>
+                </div>
           </div>
         </div>
       </div>
