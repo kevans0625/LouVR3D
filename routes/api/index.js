@@ -7,6 +7,7 @@ const db = require("../../models");
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
 
+const exhibitRoutes = require("./exhibit")
 
 router.use("/user", userRoutes);
 
@@ -29,7 +30,7 @@ router.post("/login", async function(req, res) {
         .json({ msg: "No account with this email has been registered." });
 
     const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch) return res.status(400).json({ msg: "Invalid credentials." });
+    if (!isMatch) return rgit es.status(400).json({ msg: "Invalid credentials." });
 
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
     res.json({
@@ -46,4 +47,6 @@ router.post("/login", async function(req, res) {
   }
 });
         // });
+router.use("/exhibit", exhibitRoutes);
+
 module.exports = router;

@@ -1,6 +1,6 @@
 module.exports= {
     User: require("./user"),
-    Favorite: require("./favorite"),
+    Exhibit: require("./exhibit"),
     Images: require("./images")
 
 };
