@@ -17,13 +17,14 @@ const Home = () => {
   return (
     <div>
       <HomeScene/>
+      <div className="margin-top">
       <div className="container">
         <div className="row">
           <div className="col-md-6 col-md-offset-3">
-            <h2>Welcome{}</h2>
+            {/* <h2>Welcome{}</h2> */}
             <img id="pyramid" alt="" src={pyramid} />
             <br />
-            <h2>Le LouVr3D{}</h2>
+            <h2>Welcome to Le LouVr3D</h2>
             <div className="col s6">
             <button type="submit" className="btn btn-default" href="/login"
               onClick={handleLogin}>Log In</button>
@@ -33,6 +34,7 @@ const Home = () => {
             <button type="submit" className="btn btn-default" href="/signup"
               onClick={handleSignup}>Sign Up</button>
                 </div>
+          </div>
           </div>
         </div>
       </div>
