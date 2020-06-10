@@ -43,7 +43,7 @@ export default {
 
   // Save image to mongo
   saveImage: function(imageData) {
-    return axios.post("/api/exhibits", imageData)
+    return axios.post("/api/exhibit", imageData)
 
   }
 };

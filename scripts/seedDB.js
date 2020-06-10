@@ -5,44 +5,20 @@ const db = require("../models");
 
 mongoose.connect(
   process.env.MONGODB_URI ||
-  "mongodb://localhost/users"
+  "mongodb://localhost/Louvr3dusers"
 );
 
 const userSeed = [{
-    username: "StephenKing",
-    email: "TheDead@gmail.com",
-    password:"3dspheres"
+    title: "StephenKing",
+    artist: "TheDead@gmail.com",
+    image:"3dspheres"
 },
-{
-    username: "William123Golding",
-    email: "Lord of @gmail.com",
-    password:"twirl"
-},
-{
-    username: "J.D.Salinger",
-    email: "TheCatc@gmail.com",
-    password:"twinkies67"
-},
-{
-    username: "TallMan.Klein",
-    email: "ThePunc@gmail.com",
-    password:"!shoe34"
-},
-{
-    email: "HarryPo@gmail.com",
-      username: "J.K.Balling",
-    password:"k9g9dfiy&"
-},
-{
-    username: "Neil_Gaiman",
-    email: "Coraline@gmail.com",
-    password:"w156guapp"
-},
+
 ];
 
-db.User
+db.Exhibit
   .remove({})
-  .then(() => db.User.collection.insertMany(userSeed))
+  .then(() => db.Exhibit.collection.insertMany(userSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!");
     process.exit(0);
