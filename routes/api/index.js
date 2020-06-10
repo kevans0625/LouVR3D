@@ -1,7 +1,6 @@
 const router = require("express").Router();
 const userRoutes = require("./user");
 const imagesRoutes = require("./images");
-const exhibitRoutes = require("./exhibits")
 // const User = require("../../controllers/userController")
 const db = require("../../models");
 const bcrypt = require("bcrypt")
