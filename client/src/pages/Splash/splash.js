@@ -7,7 +7,7 @@ import UserContext from "../../content/UserContext";
 // import M from "materialize-css"
 
 
-const Home = () => {
+const Splash = () => {
   const {userData, setUserData} = useContext(UserContext);
 
   const history = useHistory(); 
@@ -102,4 +102,4 @@ const Home = () => {
   )
 }
 
-export default Home;
+export default Splash;
