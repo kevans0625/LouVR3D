@@ -1,7 +1,8 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect,useContext} from "react";
+import {useHistory} from "react-router-dom"
 import API from "../../utils/API";
 import M from "materialize-css"
-import Modal from "../Login/modal";
+import UserContext from "../../content/UserContext";
 
 const Signup = () => {
   const [users, setUsers] = useState([])
@@ -9,9 +10,9 @@ const Signup = () => {
     username: "",
     email: "",
     password: "",
-   error: ""
+    error: ""
   })
-
+  const {setUserData} = useContext(UserContext);
   useEffect(() => {
     API.getUsers()
     .then(res =>
@@ -20,6 +21,7 @@ const Signup = () => {
     ).catch(err => console.log(err))
   }, [])
  
+  const history = useHistory()
 
 const handleInputChange = event => {
    const {name, value} = event.target
@@ -33,11 +35,32 @@ const handleInputChange = event => {
         username: formObject.username,
         email: formObject.email,
         password: formObject.password
-      }, ( M.toast({html: 'Success!'})))
-      .catch(err =>{
-      M.toast({html: `${err}`}) 
-      console.log(err.message)});
-    } 
+      }).then((res) =>{
+        console.log(res) 
+        if (res.status === 200){
+         M.toast({html: 'Success!'})
+          API.loginUser({
+            username: formObject.username,
+            password: formObject.password
+          }).then((res)=>{
+            console.log(res.data.token)
+            setUserData({
+              token: res.data.token,
+              user: res.data.user
+            })
+            localStorage.setItem("auth-token", res.data.token)
+            history.push("/profile")
+          })
+        }  
+
+        }).catch((res) => {
+          console.log(res)
+
+          return  M.toast({html: 'This email or username already belongs to a memeber!'})
+        
+      })
+
+    }
   }
 
 

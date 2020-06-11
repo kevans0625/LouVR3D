@@ -1,7 +1,9 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect,useContext} from "react";
+import {useHistory} from "react-router-dom"
 import API from "../../utils/API";
 import M from "materialize-css"
-import Modal from "../Signup/modal";
+import UserContext from "../../content/UserContext";
+import Modal from "../Signup/modal"
 
 const Login = () => {
     const [users, setUsers] = useState([])
@@ -19,6 +21,9 @@ const Login = () => {
       ).catch(err => console.log(err))
     }, [])
    
+    const {setUserData} = useContext(UserContext);
+
+    const history = useHistory()
   
   const handleInputChange = event => {
      const {name, value} = event.target
@@ -34,20 +39,19 @@ const Login = () => {
         }).then((res) =>{
           console.log(res) 
           if (res.status === 200){
-            return  M.toast({html: 'Success!'})
+             M.toast({html: 'Success!'})
+             console.log(res.data.token)
+             setUserData({
+               token: res.data.token,
+               user: res.data.user
+             })
+             localStorage.setItem("auth-token", res.data.token)
+             history.push("/profile")
+            
           }}).catch((res) => {
             console.log(res)
             return  M.toast({html: 'Invalid credentials!'})
         })
-
- 
-        // , ( M.toast
-      //       ({
-      //       html: 'Success!'
-      //       })))
-      //   .catch(err =>{
-      //   M.toast({html: `${err}`}) 
-      //   console.log(err.message)});
       }  
         // window.location.replace("/profile");
     }
