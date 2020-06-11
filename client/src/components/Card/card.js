@@ -4,16 +4,12 @@ import pyramid from "../../components/images/pyramid.jpg"
 
 const Card = () => {
 
-
-
     return (
         <div>
           <div className="container">
            <div className="row">
          <div className="col-md-6 col-md-offset-3">
          <h2>My Cards</h2>
-        
-        
           </div>
 
           <div class="col s12 m7">
