@@ -38,7 +38,7 @@ router.post("/login", async function(req, res) {
         displayName: user.username,
       },
     });
-    // console.log(token)
+    console.log(token)
   } catch (err) {
     res.status(500).json({ error: err.message });
     console.log(err.message)

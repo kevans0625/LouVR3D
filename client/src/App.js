@@ -22,16 +22,15 @@ function App() {
       let token = localStorage.getItem("auth-token");
       if (token === null) {
         localStorage.setItem("auth-token", "");
-        token = "";
+        token = ""; 
       }
       const tokenRes = await Axios.post(
-        "http://localhost:3000/api/tokenIsValid",
+        "/api/tokenIsValid",
         null,
         { headers: { "x-auth-token": token } }
       );
-      console.log(tokenRes.config.data)
-      if (tokenRes.config.data) {
-        const userRes = await Axios.get("http://localhost:3000/api/validUser", 
+      if (tokenRes) {
+        const userRes = await Axios.get("/api/validUser",
         {
           headers: { "x-auth-token": token },
         });
@@ -39,7 +38,9 @@ function App() {
           token,
           user: userRes.data,
         });
+        console.log(tokenRes)
         console.log(userRes)
+        console.log(token)
       }
     };
 
