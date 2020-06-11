@@ -35,10 +35,12 @@ const Login = () => {
           console.log(res) 
           if (res.status === 200){
             return  M.toast({html: 'Success!'})
-          }
+          }}).catch((res) => {
+            console.log(res)
             return  M.toast({html: 'Invalid credentials!'})
-
         })
+
+ 
         // , ( M.toast
       //       ({
       //       html: 'Success!'
