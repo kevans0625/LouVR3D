@@ -3,6 +3,8 @@ import {useHistory} from "react-router-dom"
 import API from "../../utils/API";
 import M from "materialize-css"
 import UserContext from "../../content/UserContext";
+import pyramid from "../../components/images/pyramid.jpg"
+import Landing from "../Splash/splash"
 
 const Signup = () => {
   const [users, setUsers] = useState([])
@@ -12,7 +14,7 @@ const Signup = () => {
     password: "",
     error: ""
   })
-  const {setUserData} = useContext(UserContext);
+  const {userData,setUserData} = useContext(UserContext);
   useEffect(() => {
     API.getUsers()
     .then(res =>
@@ -62,14 +64,37 @@ const handleInputChange = event => {
 
     }
   }
-
+  const handleLogout = () => {
+    setUserData({
+      token: undefined,
+      user: undefined
+    })
+    localStorage.setItem("auth-token", "")
+   //   window.location.replace("/signup");
+   }
 
     return (
         <div>
           <div className="container">
            <div className="row">
          <div className="col-md-6 col-md-offset-3">
-        <h2>Sign Up Form</h2>
+
+         <div className="margin-top">
+      <div className="container">
+        <div className="row">
+          <div className="col-md-6 col-md-offset-3">
+            {/* <h2>Welcome{}</h2> */}
+            <img id="pyramid" alt="" src={pyramid} />
+            <br />
+            {/* <h2>Welcome to Le LouVr3D</h2> */}
+
+            {userData.user ? (
+
+          <Landing/>
+
+            ):(
+              <>
+           <h2>Sign Up Form</h2>
         <form className="signup">
         <div className="form-group">
             <input 
@@ -112,7 +137,20 @@ const handleInputChange = event => {
         <br />
         {/* <Modal/> */}
         <p>Or log in <a href="/login">here</a></p>
+              </>
+            )}
+          </div>
+          </div>
+        </div>
       </div>
+    </div>
+
+
+
+
+
+
+     
       </div>
       </div>
       </div>

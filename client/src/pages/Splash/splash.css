@@ -1,0 +1,24 @@
+canvas{
+    z-index: -1;
+    position: absolute;
+}
+
+.container{
+    z-index: 1;
+}
+
+#pyramid{
+    opacity: 0;
+}
+
+.splashheader{
+    color: aliceblue;
+    margin-bottom: 10px!important;
+}
+.margin-top{
+    margin-top: 10px;
+}
+
+button{
+    margin-bottom: 10px!important;
+}
