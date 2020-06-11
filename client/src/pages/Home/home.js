@@ -23,7 +23,11 @@ const Home = () => {
   }
 
   const handleLogout = () => {
-    history.push("/logout")
+   setUserData({
+     token: undefined,
+     user: undefined
+   })
+   localStorage.setItem("auth-token", "")
   //   window.location.replace("/signup");
   }
   return (
