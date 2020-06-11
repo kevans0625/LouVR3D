@@ -41,7 +41,7 @@ class SignupModal extends Component {
           className="waves-effect waves-light btn modal-trigger"
           data-target="modal1" href="/"
         >
-          Login
+          Sign up
         </a>
         <div
           ref={Modal => {
@@ -55,7 +55,7 @@ class SignupModal extends Component {
                         If you want Fixed Footer Modal then add
                         modal-fixed-footer to the "modal" div*/}
           <div className="modal-content">
-          <h4>Login to Le LouVr3d</h4>
+          {/* <h4> Sign up for Le LouVr3d</h4> */}
           <Signup/>
          
           </div>

@@ -55,7 +55,7 @@ class LoginModal extends Component {
                         If you want Fixed Footer Modal then add
                         modal-fixed-footer to the "modal" div*/}
           <div className="modal-content">
-          <h4>Login to Le LouVr3d</h4>
+          <h4> Sign up for Le LouVr3d</h4>
           <Login/>
          
           </div>

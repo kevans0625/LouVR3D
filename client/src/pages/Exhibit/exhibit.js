@@ -108,6 +108,11 @@ let displayArt = exhibits.results;
               //  onClick={}
               />
             </div>
+            <button className="btn btn-default">Favorites</button>
+            <button className="btn btn-default"
+            >My Profile</button>
+             <button className="btn btn-default"
+            >Le LouVr3D Exhibit</button>
             <form>
               <Input
                 name="search"
@@ -118,33 +123,45 @@ let displayArt = exhibits.results;
               />
             </form>
             <Row >
-              <Col size="md-6 sm-12">
+              {/* <Col size="md-6 sm-12"> */}
               {displayArt ? (
-                <List>
+                <div>
+                <div className="container">
+                 <div className="row">
+               <div className="col-md-6 col-md-offset-3">
+               <h2>Search Results</h2>
+                </div>
+                {/* <List> */}
                   {console.log(exhibits)}
                 {displayArt.map(exhibit => (
-                  <ListItem key={displayArt.key}>
-                    
-                    {exhibit.title} by {exhibit.artist ? (exhibit.artist) : ("Artist Unknown")}
-                    <Col size="md-6 sm-12">
-                    <img src={exhibit.image} style={{width: "100px"}} />
-                    <DeleteBtn onClick={() => addArt(exhibit.key)} />
-                    </Col>
-                  </ListItem>
-                  
+                  <div className="col s12">
+              <div className="card" key={exhibit.key}>
+                <div className="card-image">
+                  <img    alt={exhibit.title} src={exhibit.image}/>
+                  <span className="card-title">{exhibit.title}</span>
+                </div>
+                <div className="card-content">
+                  <p>  by {exhibit.artist ? (exhibit.artist) : ("Artist Unknown")}</p>
+                </div>
+                <div className="card-action">
+                  <a onClick={() => addArt(exhibit.key)}>Save</a>
+                {/* <DeleteBtn onClick={() => addArt(exhibit.key)} /> */}
+                </div>
+              </div>
+            </div>
                 ))}
-                </List>
+                {/* </List> */}
+               
+              </div>
+              </div>
+              </div>
               ) : (
-                <h1>Search for something!</h1>
+                <h1></h1>
               )}
-              </Col>
+          
+              {/* </Col> */}
             </Row>
-            <button className="btn btn-default" href="/favorites">Favorites</button>
-            <br />
-            <button href="/logout" className="btn btn-default"
-            //  disabled={!(formObject.username || formObject.email || formObject.password)}
-            //  onClick={handleFormSubmit}
-            >My Profile</button>
+        
           </div>
         </div>
       </div>
