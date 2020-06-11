@@ -41,7 +41,7 @@ class SignupModal extends Component {
           className="waves-effect waves-light btn modal-trigger"
           data-target="modal1" href="/"
         >
-          Login
+          Sign up
         </a>
         <div
           ref={Modal => {

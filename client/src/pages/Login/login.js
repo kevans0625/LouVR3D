@@ -37,7 +37,6 @@ const Login = () => {
             return  M.toast({html: 'Success!'})
           }
             return  M.toast({html: 'Invalid credentials!'})
-        
 
         })
         // , ( M.toast
@@ -58,7 +57,7 @@ const Login = () => {
         <div className="container">
          <div className="row">
        <div className="col-md-6 col-md-offset-3">
-      <h2>Welcome to LouVR3D</h2>
+      <h2>Welcome to Le LouVr3D</h2>
       <form className="signup">
       <div className="form-group">
           <input 
@@ -86,7 +85,7 @@ const Login = () => {
       </form>
       <br/>
       <Modal/>
-      <p>Sign Up <a href="/signup">here</a></p>
+      {/* <p>Sign Up <a href="/signup">here</a></p> */}
     </div>
     </div>
     </div>
