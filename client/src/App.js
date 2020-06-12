@@ -1,15 +1,16 @@
   
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import './App.css';
-import Home from './pages/Home/home';
-import Login from './pages/Login/login';
-import Signup from './pages/Signup/signup';
-import Profile from './pages/Profile/profile';
-import Exhibit from './pages/Exhibit/exhibit';
-import Favorites from './pages/Favorites/favorites';
+import "./App.css";
+import Home from "./pages/Home/home";
+import Login from "./pages/Login/login";
+import Signup from "./pages/Signup/signup";
+import Profile from "./pages/Profile/profile";
+import Exhibit from "./pages/Exhibit/exhibit";
+import Favorites from "./pages/Favorites/favorites";
 import UserContext from "../src/content/UserContext";
 import Axios from "axios";
+import Auth from "./components/Auth";
 
 function App() {
   const [userData, setUserData] = useState({
@@ -48,9 +49,9 @@ function App() {
   }, []);
 
   return (
+    
     <Router>
       <UserContext.Provider value={{ userData, setUserData }}>
-
     <div className="App">
       <Switch>
       {/* <Route exact path={["/", "/users"]}/> */}
@@ -62,10 +63,10 @@ function App() {
       <Route exact path="/favorites" component={Favorites} />
       {/* <Route exact path="/users/:id"/>   */}
       </Switch>
-      
     </div>
       </UserContext.Provider>
     </Router>
+   
   );
 }
 
