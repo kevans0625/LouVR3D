@@ -93,7 +93,8 @@ const Exhibit = () => {
         title: savedImage.title,
         artist: savedImage.artist,
         department: savedImage.department,
-        image: savedImage.image
+        image: savedImage.image,
+        user_id: userData.user.id
       })
 
       .then(console.log(savedImage.title + " Saved to database"))
@@ -164,7 +165,7 @@ let displayArt = exhibits.results;
       <div className="container">
         <div className="row">
         <div className="col-md-6 col-md-offset-3">
-            <h2 className="exhibitheader">Welcome to Le LouVr3D Exhibit</h2>
+            <h2 className="exhibitheader">Discover Le LouVr3D</h2>
             <div className="row">
               <img className="circle"
                 alt=""
