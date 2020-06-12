@@ -2,9 +2,10 @@ import React, {Component}from "react";
 import avatar from "../../components/images/Missing_avatar.png"
 import ImageUploader from 'react-images-upload';
 import API from "../../utils/API";
-// import NewFileUpload from "../../components/NewFileUpload/newFileUpload";
+import './profile.css';
 
 class Profile extends Component {
+
     constructor(props) {
         super(props);
          this.state = { pictures: [] };
@@ -37,15 +38,16 @@ class Profile extends Component {
               console.log(e)
            })
       }
+      
 render() {
     return (
         <div>
           <div className="container">
            <div className="row">
          <div className="col-md-6 col-md-offset-3">
-        <h2>Welcome USER_NAME</h2>
+        <h2 className="profileheader">Welcome USER_NAME</h2>
         <div className="row">
-        <img className="circle" 
+        <img className="circle profile-avatar" 
         alt= ""
         src={avatar}
         //  onClick={}

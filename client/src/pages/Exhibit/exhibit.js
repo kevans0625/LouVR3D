@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import pyramid from "../../components/images/pyramid.jpg"
 import API from "../../utils/API";
 import { SearchButton, Input } from "../../components/SearchBar/SearchBar";
@@ -7,8 +7,13 @@ import DeleteBtn from "../../components/DeleteBtn/index";
 import { useParams } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import M from "materialize-css";
+import './exhibit.css'
+import UserContext from "../../content/UserContext";
+
+
 
 const Exhibit = () => {
+  const {userData, setUserData} = useContext(UserContext);
   const [exhibits, setExhibits] = useState([])
   const [formObject, setFormObject] = useState({
     search: "",
@@ -85,23 +90,23 @@ const Exhibit = () => {
     console.log(exhibits.results.find(result => result.key === key))
     const savedImage = exhibits.results.find(result => result.key === key)
     console.log(savedImage)
-    API.saveImage({
-      title: savedImage.title,
-      artist: savedImage.artist,
-      department: savedImage.department,
-      image: savedImage.image
-    })
-
-      .then(console.log(savedImage.title + " Saved to database"))
+      API.saveImage({
+        title: savedImage.title,
+        artist: savedImage.artist,
+        department: savedImage.department,
+        image: savedImage.image,
+        userID: userData.user.id
+      })    
   }
 
-  let displayArt = exhibits.results;
+let displayArt = exhibits.results;
   return (
     <div>
+      {console.log(userData)}
       <div className="container">
         <div className="row">
-          <div className="col-md-6 col-md-offset-3">
-            <h2>Welcome to Le LouVR3D Exhibit</h2>
+        <div className="col-md-6 col-md-offset-3">
+            <h2 className="exhibitheader">Welcome to Le LouVR3D Exhibit</h2>
             <div className="row">
               <img className="circle"
                 alt=""
@@ -109,7 +114,7 @@ const Exhibit = () => {
               //  onClick={}
               />
             </div>
-            <button className="btn btn-default">Favorites</button>
+            <button className="btn btn-default"> View Favorites</button>
             <button className="btn btn-default"
             >My Profile</button>
             <button className="btn btn-default"
@@ -124,45 +129,37 @@ const Exhibit = () => {
               />
             </form>
             <Row >
-              {/* <Col size="md-6 sm-12"> */}
+              <Col size="md-6 sm-12">
               {displayArt ? (
-                <div>
-                  <div className="container">
-                    <div className="row">
-                      <div className="col-md-6 col-md-offset-3">
-                        <h2>Search Results</h2>
-                      </div>
-                      {/* <List> */}
-                      {console.log(exhibits)}
-                      {displayArt.map(exhibit => (
-                        <div className="col s12">
-                          <div className="card" key={exhibit.key}>
-                            <div className="card-image">
-                              <img alt={exhibit.title} src={exhibit.image} />
-                              <span className="card-title">{exhibit.title}</span>
-                            </div>
-                            <div className="card-content">
-                              <p>  by {exhibit.artist ? (exhibit.artist) : ("Artist Unknown")}</p>
-                            </div>
-                            <div className="card-action">
-                              <a onClick={() => addArt(exhibit.key)}>Save</a>
-                              {/* <DeleteBtn onClick={() => addArt(exhibit.key)} /> */}
-                            </div>
-                          </div>
-                        </div>
-                      ))}
-                      {/* </List> */}
-
-                    </div>
-                  </div>
-                </div>
+                <ul className="collection">
+                  {console.log(exhibits)}
+                {displayArt.map(exhibit => (
+                  <li key={exhibit.key} className="collection-item avatar">
+                    {/* <Col size="md-6 sm-12"> */}
+      
+                  <img src={exhibit.image} alt={exhibit.title}  className="circle img-fav"/>
+                    {/* <img src="images/yuna.jpg" alt="" className="circle"/> */}
+                    <span className="title">{exhibit.title} </span>
+                    <p>
+                  {/* {exhibit.title} <br></br> */}
+                  by {exhibit.artist ? (exhibit.artist) : ("Artist Unknown")}
+                    </p>
+                  <DeleteBtn onClick={() => addArt(exhibit.key)} className="secondary-content"/>
+                    {/* <a href="#!" className="secondary-content"><i className="material-icons">grade</i></a> */}
+                    {/* </Col> */}
+                  </li>
+                ))}
+                </ul>
               ) : (
-                  <h1></h1>
-                )}
-
-              {/* </Col> */}
+                <>
+                <h5>Search through collections of art for images you would like to favorite.</h5>
+                <p>
+                  Powered by The Metropolitan Museum of Art Collection API.
+                </p>
+                </>
+              )}
+              </Col>
             </Row>
-
           </div>
         </div>
       </div>
