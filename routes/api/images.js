@@ -8,8 +8,8 @@ var storage = multer.memoryStorage();
 var upload = multer({ storage: storage });
 
 
-router.route("/findall").get((req, res, next) => {
-    IMAGE.findall(
+router.route("/all").get((req, res, next) => {
+    IMAGE.findAll(
     {}, 
     null,
     {
