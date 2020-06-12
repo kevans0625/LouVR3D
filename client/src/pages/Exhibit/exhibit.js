@@ -93,10 +93,11 @@ const Exhibit = () => {
         title: savedImage.title,
         artist: savedImage.artist,
         department: savedImage.department,
-        image: savedImage.image
+        image: savedImage.image,
+        userID: userData.user.id
       })
 
-      .then(console.log(savedImage.title + " Saved to database"))
+      
   }
 
 //   let displayArt = exhibits.results;
