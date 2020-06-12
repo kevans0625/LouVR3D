@@ -15,19 +15,5 @@ module.exports = {
         .then(console.log("hello"))
         .catch(err => {console.log(err) 
             res.status(422).json(err)})
-     },
-
-     findById: function(req, res) {
-         db.Exhibit
-            .findById(req.params.userID)
-            .then(dbModel => res.json(dbModel))
-            .catch(err => res.status(422).json(err));
-     },
-
-     findAll: function(req, res) {
-         db.Exhibit
-         .find(req.query)
-         .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
      }
 };
