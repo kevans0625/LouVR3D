@@ -7,6 +7,7 @@ const exhibitSchema = new Schema({
     department: {type: String},
     image: {type: String},
     userID: {type: String}
+    
 })
 
 const Exhibit = mongoose.model("Exhibit", exhibitSchema);
