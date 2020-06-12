@@ -1,10 +1,7 @@
 const router = require("express").Router();
 const userRoutes = require("./user");
 const imagesRoutes = require("./images");
-
 const exhibitRoutes = require("./exhibit")
-
-// const User = require("../../controllers/userController")
 const db = require("../../models");
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
@@ -32,6 +29,8 @@ router.post("/login", async function(req, res) {
     const isMatch = await bcrypt.compare(password, user.password);
     if (!isMatch) return res.status(400).json({ msg: "Invalid credentials." });
 
+//     const favorites = await db.Exhibit.findAll({userID:user._id});
+// console.log(favorites)
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
     res.json({
       token,
@@ -57,8 +56,9 @@ router.post("/tokenIsVerified", async (req, res) => {
 
     const user = await db.User.findById(verified.id);
     if (!user) return res.json(false);
-
-    return res.json(true);
+  const favorites = await db.Exhibit.findAll({userid:verified.id});
+    console.log("favorites" + favorites)
+    return res.json(true, favorites);
   } catch (err) {
     res.status(500).json({ error: err.message });
   }
