@@ -106,7 +106,7 @@ let displayArt = exhibits.results;
       <div className="container">
         <div className="row">
         <div className="col-md-6 col-md-offset-3">
-            <h2 className="exhibitheader">Welcome to Le LouVR3D Exhibit</h2>
+            <h2 className="exhibitheader">Discover Le LouVr3D</h2>
             <div className="row">
               <img className="circle"
                 alt=""
@@ -126,6 +126,7 @@ let displayArt = exhibits.results;
               />
               <SearchButton
                 onClick={handleFormSubmit}
+                className=""
               />
             </form>
             <Row >

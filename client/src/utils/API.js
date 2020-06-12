@@ -17,6 +17,9 @@ export default {
   deleteUser: function(id) {
     return axios.delete("/api/user/" + id);
   },
+  modifyUser: function(_id, body) {
+    return axios.put("/api/user/", _id, body);
+  },
   // Saves a User to the database
   saveUser: function(userData) {
     console.log(userData)
@@ -27,7 +30,7 @@ export default {
     console.log(userData)
     return axios.post("/api/login", userData);
     },
-   imageUpload: function(imageData) {
+  imageUpload: function(imageData) {
       console.log(imageData)
       return axios.post("/api/images/upload", imageData)
   },

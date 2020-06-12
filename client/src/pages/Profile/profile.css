@@ -4,8 +4,28 @@
 
 .profile-avatar{
     width: 100px!important;
-    height: 100px!important;;
+    height: 100px!important;
+    margin: 10px!important;
+}
+.avatar-div{
+ background-color: orange;
+ margin: 10px!important;
+ position: relative;
+ width: 50%;
+}
+.middle{
+    position: absolute;
+    top: 10%;
+    left: 52%;
+}
+.create{
+    height: 50px!important;
+    width: 50px!important;
+    color: gray;
+}
+.hidden{
+    display: none;
 }
 button{
-    margin-bottom: 10px!important;
+    margin: 10px!important;
 }

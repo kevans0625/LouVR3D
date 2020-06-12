@@ -5,7 +5,7 @@ import HomeScene from "../../components/HomeScene/index"
 import './home.css'
 import UserContext from "../../content/UserContext";
 // import M from "materialize-css"
-
+import Sidenav from "../../components/SideNav/sidenav";
 
 const Home = () => {
   const {userData, setUserData} = useContext(UserContext);
@@ -14,7 +14,6 @@ const Home = () => {
 
   const handleLogin = () => {
     history.push("/login")
-  //   window.location.replace("/login");
   }
 
   const handleSignup = () => {
@@ -41,10 +40,15 @@ const Home = () => {
             <img id="pyramid" alt="" src={pyramid} />
             <br />
             <h2 className="homeheader">Welcome to Le LouVr3D</h2>
+            <h5>TOUCH, DIVE &amp; EXPLORE</h5>
 
+<p>Creating a virtual world of 3D experiences</p>
             {userData.user ? (
-
-            <div className="col s12">
+              
+              <div className="col s12">
+              <Sidenav
+              userData={userData}
+              />
             <button type="submit" className="btn btn-default" href="/login"
               onClick={handleLogout}>Logout</button>
               </div>

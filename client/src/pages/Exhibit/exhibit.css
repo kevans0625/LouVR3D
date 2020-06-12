@@ -6,9 +6,10 @@
     margin-top: 10px;
 }
 .img-fav{
-    width: 100px!important;
+    width: 80px!important;
     height: 70px!important;;
 }
 button{
     margin-right: 10px!important;
+    margin-left: 10px!important;
 }

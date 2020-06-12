@@ -1,13 +1,13 @@
   
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import "./App.css";
-import Home from "./pages/Home/home";
-import Login from "./pages/Login/login";
-import Signup from "./pages/Signup/signup";
-import Profile from "./pages/Profile/profile";
-import Exhibit from "./pages/Exhibit/exhibit";
-import Favorites from "./pages/Favorites/favorites";
+import './App.css';
+import Home from './pages/Home/home';
+import Login from './pages/Login/login';
+import Signup from './pages/Signup/signup';
+import Splash from './pages/Splash/splash';
+import Exhibit from './pages/Exhibit/exhibit';
+import Favorites from './pages/Favorites/favorites';
 import UserContext from "../src/content/UserContext";
 import Axios from "axios";
 
@@ -58,7 +58,7 @@ function App() {
       <Route exact path="/" component={Home} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/signup" component={Signup} />
-      <Route exact path="/profile" component={Profile} />
+      <Route exact path="/splash" component={Splash} /> 
       <Route exact path="/exhibit" component={Exhibit} />
       <Route exact path="/favorites" component={Favorites} />
       {/* <Route exact path="/users/:id"/>   */}

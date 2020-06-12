@@ -1,91 +1,131 @@
-import React, {Component}from "react";
+
+import React, { useEffect, useState, useContext } from "react";
+import { useHistory } from "react-router-dom"
+import pyramid from "../../components/images/pyramid.jpg"
 import avatar from "../../components/images/Missing_avatar.png"
-import ImageUploader from 'react-images-upload';
+// import ImageUploader from 'react-images-upload';
 import API from "../../utils/API";
-import './profile.css';
+import './splash.css';
+// import HomeScene from "../../components/HomeScene/index"
+import UserContext from "../../content/UserContext";
+import ImageModal from "./ImageModal"
+import AvatarModal from "./AvatarModal"
 
-class Profile extends Component {
+const Profile = () => {
+  const { userData, setUserData } = useContext(UserContext);
+  const [users, setUsers] = useState([])
+  //   const [formObject, setFormObject] = useState({
+  //     username: "",
+  //     password: "",
+  //     email: ""
+  //   })
 
-    constructor(props) {
-        super(props);
-         this.state = { pictures: [] };
-         this.onDrop = this.onDrop.bind(this);
-         this.uploadImages = this.uploadImages.bind(this);
-    }
-    onDrop(picture) {
-        this.setState({
-            pictures: this.state.pictures.concat(picture),
-        });
+  useEffect(() => {
+    API.getUsers()
+      .then(res => {
+        console.log(res)
+        setUsers(res.data)
       }
-      uploadImages(){
-        console.log(this.state.pictures)
-        let uploadPromises = this.state.pictures.map(image => {
-          let data = new FormData();
-        //   for (var value of FormData.values()) {
-        //     console.log(value); 
-        //  }         
-         data.append("image", image);
-        //  data.append("name", image.type);
-         console.log(image);
-        //  data.append("name", image.name);
-         console.log(data.values())
-         return API.imageUpload(data)
-           })
-           API.allImages(uploadPromises)
-           .then(results =>{
-             console.log(results);
-            }).catch(e =>{
-              console.log(e)
-           })
-      }
-      
-render() {
-    return (
-        <div>
-          <div className="container">
-           <div className="row">
-         <div className="col-md-6 col-md-offset-3">
-        <h2 className="profileheader">Welcome USER_NAME</h2>
-        <div className="row">
-        <img className="circle profile-avatar" 
-        alt= ""
-        src={avatar}
-        //  onClick={}
-      />
-      </div>
- <div className="row">
-                    <span >
-                            <p ><i className="social-i fas fa-map-marker-alt"></i> Name</p>
-                           <br/><p><i className="social-i fas fa-envelope-open-text"></i> Email: </p>
-                           <br/><p><i className="social-i fas fa-unlock-alt"></i> Password:</p>
-                        </span>
+      ).catch(err => console.log(err))
+  }, [])
+
+
+  const history = useHistory();
+
+  const handleFavorites = () => {
+    history.push("/favorites")
+  }
+
+  const handleExhibit = () => {
+    history.push("/exhibit")
+  }
+
+  const handleLogin = () => {
+    history.push("/login")
+  }
+
+  const handleLogout = () => {
+    setUserData({
+      token: undefined,
+      user: undefined
+    })
+    localStorage.setItem("auth-token", "")
+  }
+
+  //nave section to be add 
+  // - update profile 
+  //visit Le LouVr3D
+  //search for cool art
+  //visit a museum 
+  //add page to update user info and add user avatar
+
+  return (
+    <div className="container">
+      <div className="row">
+        <div className="col-md-6 col-md-offset-3">
+          <div className="row">
+
+            {userData.user ? (
+              <>
+                <h2 className="profileheader">Welcome {userData.user.username} </h2>
+                <hr></hr>
+                <p>Feel free to update your profile as you see fit.</p>
+                {/* <div className="container"> */}
+                {/* <div> */}
+
+                <div className="col s12 avatar-div">
+                  <img className="circle profile-avatar" alt="" src={avatar} />
+                  <div className="middle">
+                  {/* <i class=" create fas fa-user-edit" ></i> */}
+
+                  <a class="btn-floating btn-large waves-effect waves-light red" data-target="modal3" class="modal-trigger"> <i class=" create fas fa-user-edit" ></i></a>
+                  </div>
+
                 </div>
-        <button className="btn btn-default" href="/favorites">Favorites</button>
-        <button  className="btn btn-default" href="/exhibit">Le LouVR3D exhibit </button>
-        <ImageUploader
-                withIcon={true}
-                withPreview={true}
-                buttonText='Select Image(s)'
-                onChange={this.onDrop}
-                imgExtension={['.jpg', '.gif', '.png']}
-                maxFileSize={5242880}
-            />
-          <button type="submit" className="btn btn-default"
-              //  disabled={!(formObject.username || formObject.email || formObject.password)}
-               onClick={this.uploadImages}
-               >Upload</button>
-        {/* </form> */}
-        <br />
-        {/* <NewFileUpload /> */}
-        <button  href="/logout" className="btn btn-default"
-              //  disabled={!(formObject.username || formObject.email || formObject.password)}
-              //  onClick={handleFormSubmit}
-               >Logout</button>
+                <div className="col s12">
+
+                  <span >
+                    <p><i className="social-i fas fa-map-marker-alt"></i> Name</p>
+                    <p><i className="social-i fas fa-envelope-open-text"></i> Email: </p>
+                    <p><i className="social-i fas fa-unlock-alt"></i> Password:</p>
+                  </span>
+                </div>
+                <div className="col s12 disable">
+                <AvatarModal/>
+              </div>
+                {/* <ImageModal/> */}
+                <div className="col s12 m6">
+               <ImageModal className="btn btn-default" />
+                </div>
+                <div className="col s12 m6">
+                  <button type="submit" className="btn btn-default" onClick={handleFavorites}>View Favorites</button>
+                </div>
+
+                <div className="col s12 m6">
+                  <button type="submit" className="btn btn-default" onClick={handleExhibit}>Le LouVr3D</button>
+                </div>
+                <div className="col s12 m6">
+                  <button type="submit" className="btn btn-default" onClick={handleExhibit}>Look up Art</button>
+                </div>
+
+                <div className="col s12">
+                  <button type="submit" className="btn btn-default" onClick={handleLogout}>Logout</button>
+                </div>
+              </>
+            ) : (
+                <>
+                  <div className="col s5">
+                    <button type="submit" className="btn btn-default" onClick={handleLogin}>Login</button>
+                  </div>
+                </>
+              )}
+
+          </div>
+        </div>
       </div>
-      </div>
-      </div>
-      </div>
-    );
+    </div>
+
+  )
 }
-}
+
 export default Profile;

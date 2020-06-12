@@ -46,14 +46,14 @@ const Login = () => {
                user: res.data.user
              })
              localStorage.setItem("auth-token", res.data.token)
-             history.push("/profile")
+             history.push("/splash")
             
           }}).catch((res) => {
             console.log(res)
             return  M.toast({html: 'Invalid credentials!'})
         })
       }  
-        // window.location.replace("/profile");
+        // window.location.replace("/splash");
     }
   
 

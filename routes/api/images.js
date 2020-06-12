@@ -5,7 +5,24 @@ const IMAGE = require("../../models/images");
 const multer = require("multer");
 var AWS = require("aws-sdk");
 var storage = multer.memoryStorage();
-var upload =multer({ storage: storage });
+var upload = multer({ storage: storage });
+
+
+router.route("/findall").get((req, res, next) => {
+    IMAGE.findall(
+    {}, 
+    null,
+    {
+        sort: { createdAt: 1 }
+    },
+    (err, imgs) => {
+        if (err) {
+            return next(err);
+        }
+        res.status(200).send(imgs);
+    }
+    );
+});
 
 router.route("/").get((req, res, next) => {
     IMAGE.find(
