@@ -44,23 +44,25 @@ class Sidenav extends Component {
             </div>
           </li>
           <li>
-            <a href="#!">
-              <i className="material-icons">cloud</i>First Link With Icon
+            <a href="/exhibit">
+              <i className="material-icons">search</i>Discover Art 
             </a>
           </li>
           <li>
-            <a href="#!">Second Link</a>
+            <a href="/favorites">
+              <i className="material-icons">star_half </i>View Favorites 
+            </a>
+          </li>
+          <li>
+            <a href="/">
+            <i className="material-icons">photo_library</i>Visit Le LouVr3D Exhibit
+            </a>
           </li>
           <li>
             <div className="divider" />
           </li>
           <li>
-            <a className="subheader">Subheader</a>
-          </li>
-          <li>
-            <a className="waves-effect" href="#!">
-              Third Link With Waves
-            </a>
+            <a className="subheader">Log Out</a>
           </li>
         </ul>
         <a href="#!" data-target="slide-out" className="sidenav-trigger">

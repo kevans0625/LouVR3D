@@ -30,7 +30,7 @@ export default {
     console.log(userData)
     return axios.post("/api/login", userData);
     },
-   imageUpload: function(imageData) {
+  imageUpload: function(imageData) {
       console.log(imageData)
       return axios.post("/api/images/upload", imageData)
   },
