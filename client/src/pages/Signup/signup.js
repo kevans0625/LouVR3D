@@ -5,6 +5,7 @@ import M from "materialize-css"
 import UserContext from "../../content/UserContext";
 import pyramid from "../../components/images/pyramid.jpg"
 import Landing from "../Splash/splash"
+import $ from "jquery"
 
 const Signup = () => {
   const [users, setUsers] = useState([])
@@ -32,37 +33,42 @@ const handleInputChange = event => {
 
   const handleFormSubmit = event => {
     event.preventDefault();
+    var ele = document.getElementsByTagName('input'); 
+    console.log(ele.checked)
+    ``
     if(formObject.username && formObject.email && formObject.password){
       API.saveUser({
         username: formObject.username,
         email: formObject.email,
-        password: formObject.password
-      }).then((res) =>{
-        console.log(res) 
-        if (res.status === 200){
-         M.toast({html: 'Success!'})
-          API.loginUser({
-            username: formObject.username,
-            password: formObject.password
-          }).then((res)=>{
-            console.log(res.data.token)
-            setUserData({
-              token: res.data.token,
-              user: res.data.user
-            })
-            localStorage.setItem("auth-token", res.data.token)
-            history.push("/profile")
-          })
+        password: formObject.password,
+        // avatar: z
+      })
+      // .then((res) =>{
+      //   console.log(res) 
+        // if (res.status === 200){
+        //  M.toast({html: 'Success!'})
+        //   API.loginUser({
+        //     username: formObject.username,
+        //     password: formObject.password
+        //   }).then((res)=>{
+        //     console.log(res.data.token)
+        //     setUserData({
+        //       token: res.data.token,
+        //       user: res.data.user
+        //     })
+        //     localStorage.setItem("auth-token", res.data.token)
+        //     // history.push("/splash")
+        //   })
         }  
 
-        }).catch((res) => {
-          console.log(res)
+    //     }).catch((res) => {
+    //       console.log(res)
 
-          return  M.toast({html: 'This email or username already belongs to a memeber!'})
+    //       return  M.toast({html: 'This email or username already belongs to a memeber!'})
         
-      })
+    //   })
 
-    }
+    // }
   }
   const handleLogout = () => {
     setUserData({
@@ -73,6 +79,19 @@ const handleInputChange = event => {
    //   window.location.replace("/signup");
    }
 
+   const handleAvatarSubmit = event => {
+    event.preventDefault();
+    // loadExhibits(formObject.search)
+    var ele = document.getElementsByTagName('input'); 
+    console.log(ele.checked)
+    if ($('input[name=avatarCheck]:checked').length > 0) {
+        // do something here
+       let z = $('input[name="avatarCheck"]:checked').val();
+      console.log(z)
+
+    }
+
+}
     return (
         <div>
           <div className="container">
@@ -125,10 +144,72 @@ const handleInputChange = event => {
             onChange={handleInputChange}
             name="password"/>
           </div>
-          {/* <div  id="alert" className="alert alert-danger" role="alert">
-            <span className="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-            <span className="sr-only">Error:</span> <span className="msg"></span>
-          </div> */}
+          <h2 className="">Select A Patronage</h2>
+
+<p>Be sure to hit save to submit the change</p>
+
+
+{/* <div>
+    <form action="#"> */}
+        <p className="col s6 m3">
+            <img className="circle profile-avatar" src="https://api.adorable.io/avatars/face/eyes1" />
+            <label>
+
+                <input type="radio" name="avatarCheck" value="https://api.adorable.io/avatars/face/eyes1" />
+                <span>Gogh</span>
+            </label>
+        </p>
+        <p className="col s6 m3">
+            <img className="circle profile-avatar" src="https://api.adorable.io/avatars/face/eyes2" />
+            <label>
+                <input type="radio" name="avatarCheck" value="https://api.adorable.io/avatars/face/eyes2" />
+                <span>Bourgeois</span>
+            </label>
+        </p>
+        <p className="col s6 m3">
+            <img className="circle profile-avatar" src="https://api.adorable.io/avatars/face/eyes3" />
+            <label>
+                <input type="radio" name="avatarCheck" value="https://api.adorable.io/avatars/face/eyes3" />
+                <span>Vinci</span>
+            </label>
+        </p>
+        <p className="col s6 m3">
+            <img className="circle profile-avatar" src="https://api.adorable.io/avatars/face/eyes4" />
+            <label>
+                <input type="radio" name="avatarCheck" value="https://api.adorable.io/avatars/face/eyes4" />
+                <span>Basquiat</span>
+            </label>
+        </p>
+
+        <p className="col s6 m3">
+            <img className="circle profile-avatar" src="https://api.adorable.io/avatars/face/eyes5" />
+            <label>
+                <input type="radio" name="avatarCheck" value="https://api.adorable.io/avatars/face/eyes" />
+                <span>Monet</span>
+            </label>
+        </p>
+        <p className="col s6 m3">
+            <img className="circle profile-avatar" src="https://api.adorable.io/avatars/face/eyes6" />
+            <label>
+                <input type="radio" name="avatarCheck" value="https://api.adorable.io/avatars/face/eyes6" />
+                <span>Jules</span>
+            </label>
+        </p>
+        <p className="col s6 m3">
+            <img className="circle profile-avatar" src="https://api.adorable.io/avatars/face/eyes7" />
+            <label>
+                <input type="radio" name="avatarCheck" value="https://api.adorable.io/avatars/face/eyes7" />
+                <span>Michelangelo</span>
+            </label>
+        </p>
+        <p className="col s6 m3">
+            <img className="circle profile-avatar" src="https://api.adorable.io/avatars/face/eyes8" />
+            <label>
+                <input type="radio" name="avatarCheck" value="https://api.adorable.io/avatars/face/eyes8" />
+                <span>Frida</span>
+            </label>
+        </p>
+     
           <button type="submit" className="btn btn-default"
                disabled={!(formObject.username || formObject.email || formObject.password)}
                onClick={handleFormSubmit}

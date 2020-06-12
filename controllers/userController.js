@@ -26,7 +26,6 @@ module.exports = {
         .catch(function(err) {
             if (err.name == 'ValidationError') {
                 console.error('Error Validating!');
-                // res.send('Error Validating!').json(err);
                 res.status(422).json({message: err});
             } else {
                 console.error('Validating!', err);

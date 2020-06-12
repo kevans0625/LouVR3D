@@ -20,7 +20,7 @@ const Favorite = () => {
      .catch(err => {
        console.log(err)});
      };
-     console.log(favorites)
+    //  console.log(favorites)
     return (
         <div>
           <div className="container">
@@ -29,6 +29,7 @@ const Favorite = () => {
          <h2>My Favorites</h2>
           </div>
           <div class="col s12 m7">
+            {console.log(userData)}
       <div class="card">
         <div class="card-image">
           <img    alt="" src={pyramid}/>

@@ -4,7 +4,9 @@ import pyramid from "../../components/images/pyramid.jpg"
 import HomeScene from "../../components/HomeScene/index"
 import './splash.css'
 import UserContext from "../../content/UserContext";
-// import M from "materialize-css"
+import M from "materialize-css"
+import Sidenav from "../../components/SideNav/sidenav";
+
 
 
 const Splash = () => {
@@ -13,7 +15,7 @@ const Splash = () => {
   const history = useHistory(); 
 
   const handleProfile = () => {
-    history.push("/profile")
+    history.push("/splash")
   }
   const handleFavorites = () => {
     history.push("/favorites")
@@ -55,21 +57,21 @@ const Splash = () => {
         <div className="row">
           {/* <div className="col-md-12"> */}
             {/* <h2>Welcome{}</h2> */}
+            {/* <Sidenav /> */}
             <img id="pyramid" alt="" src={pyramid} />
             <br />
             <h2 className="splashheader">Welcome to Le LouVr3D</h2>
-
+<Sidenav/>
             {userData.user ? (
   <>
-  <p>Ask questions as you are speaking to me and try to populate the website with the info my bot will provide. 
-    Every page will have a progress bar which indicates how much info you have already recovered.</p>
+  <p>View the vast collection of the art in Le LouVr3d.</p>
 
             <div className="col s5">
             <button type="submit" className="btn btn-default" href="/login"
               onClick={handleLogout}>Logout</button>
               </div>
             <div className="col s5">
-            <button type="submit" className="btn btn-default" href="/profile"
+            <button type="submit" className="btn btn-default" href="/splash"
               onClick={handleProfile}>Edit Profile</button>
               </div>
               <div className="col s5">
