@@ -51,6 +51,11 @@ render() {
                 imgExtension={['.jpg', '.gif', '.png']}
                 maxFileSize={5242880}
             />
+  <button type="submit" className="btn btn-default"
+              //  disabled={!(formObject.username || formObject.email || formObject.password)}
+               onClick={this.uploadImages}
+               >Upload</button>
+
       </div>
       </div>
       </div>
