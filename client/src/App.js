@@ -10,7 +10,7 @@ import Exhibit from "./pages/Exhibit/exhibit";
 import Favorites from "./pages/Favorites/favorites";
 import UserContext from "../src/content/UserContext";
 import Axios from "axios";
-import Auth from "./components/Auth";
+
 
 function App() {
   const [userData, setUserData] = useState({
