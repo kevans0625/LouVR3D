@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import pyramid from "../../components/images/pyramid.jpg"
 import API from "../../utils/API";
 import { SearchButton, Input } from "../../components/SearchBar/SearchBar";
@@ -7,10 +7,13 @@ import DeleteBtn from "../../components/DeleteBtn/index";
 import { useParams} from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import './exhibit.css'
-
+import UserContext from "../../content/UserContext";
 
 
 const Exhibit = () => {
+  const {userData, setUserData} = useContext(UserContext);
+
+
   const [exhibits, setExhibits] = useState([])
   const [formObject, setFormObject] = useState({
     search: "",
@@ -157,6 +160,7 @@ const Exhibit = () => {
 let displayArt = exhibits.results;
   return (
     <div>
+      {console.log(userData)}
       <div className="container">
         <div className="row">
         <div className="col-md-6 col-md-offset-3">
