@@ -14,7 +14,6 @@ const Home = () => {
 
   const handleLogin = () => {
     history.push("/login")
-  //   window.location.replace("/login");
   }
 
   const handleSignup = () => {
@@ -42,6 +41,9 @@ const Home = () => {
             <br />
             <h2 className="homeheader">Welcome to Le LouVr3D</h2>
 
+            <h5>TOUCH, DIVE &amp; EXPLORE</h5>
+
+<p>Creating a virtual world of 3D experiences</p>
             {userData.user ? (
 
             <div className="col s12">
