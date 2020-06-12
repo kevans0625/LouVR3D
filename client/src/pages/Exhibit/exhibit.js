@@ -185,6 +185,7 @@ let displayArt = exhibits.results;
               />
               <SearchButton
                 onClick={handleFormSubmit}
+                className=""
               />
             </form>
             <Row >
