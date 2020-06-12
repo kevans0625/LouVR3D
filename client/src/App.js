@@ -11,6 +11,7 @@ import Favorites from './pages/Favorites/favorites';
 import UserContext from "../src/content/UserContext";
 import Axios from "axios";
 
+
 function App() {
   const [userData, setUserData] = useState({
     token: undefined,
@@ -48,9 +49,9 @@ function App() {
   }, []);
 
   return (
+    
     <Router>
       <UserContext.Provider value={{ userData, setUserData }}>
-
     <div className="App">
       <Switch>
       {/* <Route exact path={["/", "/users"]}/> */}
@@ -62,10 +63,10 @@ function App() {
       <Route exact path="/favorites" component={Favorites} />
       {/* <Route exact path="/users/:id"/>   */}
       </Switch>
-      
     </div>
       </UserContext.Provider>
     </Router>
+   
   );
 }
 
