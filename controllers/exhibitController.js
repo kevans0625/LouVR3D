@@ -9,6 +9,7 @@ module.exports = {
              image: req.body.image,
              key: req.body.key,
              userID: req.body.userID
+             
          })
         .then(dbModel => res.json(dbModel))
         .then(console.log("hello"))

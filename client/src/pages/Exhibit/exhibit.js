@@ -97,6 +97,7 @@ const Exhibit = () => {
         image: savedImage.image,
         userID: userData.user.id
       })    
+      
   }
 
 let displayArt = exhibits.results;
@@ -126,7 +127,6 @@ let displayArt = exhibits.results;
               />
               <SearchButton
                 onClick={handleFormSubmit}
-                className=""
               />
             </form>
             <Row >
