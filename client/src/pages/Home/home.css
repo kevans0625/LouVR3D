@@ -1,4 +1,7 @@
-canvas{
+body {
+    text-align: left!important;
+  }
+  canvas{
     z-index: -1;
     position: absolute;
 }
@@ -11,8 +14,9 @@ canvas{
     opacity: 0;
 }
 
-h2{
-    color: aliceblue;
+.homeheader{
+    color: aliceblue!important;
+    margin-top: 70px!important;
     margin-bottom: 100px!important;
 }
 .margin-top{
