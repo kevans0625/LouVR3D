@@ -20,7 +20,7 @@ const Favorite = () => {
      .catch(err => {
        console.log(err)});
      };
-    //  console.log(favorites)
+     console.log(favorites)
     return (
         <div>
           <div className="container">
