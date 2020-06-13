@@ -13,9 +13,9 @@ function Frame(props) {
     image.setAttribute("src", props.src)
     info.style.zIndex = 1;
 
-    
-    
   }
+
+
  
     return(
         <Entity

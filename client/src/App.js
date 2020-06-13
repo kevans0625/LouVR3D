@@ -9,7 +9,8 @@ import Splash from './pages/Splash/splash';
 import Exhibit from './pages/Exhibit/exhibit';
 import Favorites from './pages/Favorites/favorites';
 import UserContext from "../src/content/UserContext";
-import Viewing from "./pages/Viewing/index"
+import Viewing from "./pages/Viewing/index";
+import UploadExhibit from "./pages/UploadExhibit/index";
 import Axios from "axios";
 
 function App() {
@@ -62,6 +63,7 @@ function App() {
       <Route exact path="/exhibit" component={Exhibit} />
       <Route exact path="/favorites" component={Favorites} />
       <Route exact path="/view" component={Viewing} />
+      <Route exact path="/louvr3d" component={UploadExhibit} />
       {/* <Route exact path="/users/:id"/>   */}
       </Switch>
     </div>
