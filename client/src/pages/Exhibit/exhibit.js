@@ -153,18 +153,18 @@ const Exhibit = () => {
                   <ul className="collection">
                     {console.log(exhibits)}
                     {displayArt.map(exhibit => (
-                      <li key={exhibit.key} className="collection-item avatar">
+                      <li key={exhibit.key} className="collection-item avatar" >
                         {/* <Col size="md-6 sm-12"> */}
                         {/*       
 
                     {/* <img src="images/yuna.jpg" alt="" className="circle"/> */}
-                        <span className="title">{exhibit.title} </span>
+                        <span className="title size">{exhibit.title} </span>
                         <p>
                           {/* {exhibit.title} <br></br> */}
                   by {exhibit.artist ? (exhibit.artist) : ("Artist Unknown")}
                         </p>
                         <Col size="md-6 sm-12">
-                          <img src={exhibit.image} style={{ width: "100px" }} />
+                          <img src={exhibit.image} style={{ width: "300px" }} />
 
                           <DeleteBtn onClick={() => addArt(exhibit.key)} className="secondary-content" />
                         </Col>
