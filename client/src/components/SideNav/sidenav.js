@@ -41,6 +41,11 @@ class Sidenav extends Component {
             </div>
           </li>
           <li>
+            <a href="/">
+            <i className="material-icons">home</i>Home
+            </a>
+          </li>
+          <li>
             <a href="/exhibit">
               <i className="material-icons">search</i>Discover Art 
             </a>
@@ -55,14 +60,18 @@ class Sidenav extends Component {
             <i className="material-icons">photo_library</i>Visit Le LouVr3D Exhibit
             </a>
           </li>
+          
           <li>
             <div className="divider" />
           </li>
           <li>
-            <a className="subheader">Log Out</a>
+         
+            <a href="/">
+            <i className="material-icons">directions_run</i>Log Out
+            </a>
           </li>
         </ul>
-        <a href="#!" data-target="slide-out" className="sidenav-trigger">
+        <a href="#!" data-target="slide-out" className="sidenav-trigger right-align">
           <i className="material-icons">menu</i>
         </a>
       </div>

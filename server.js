@@ -21,6 +21,8 @@ app.use(express.urlencoded({ extended: true, limit: '5gb', parameterLimit: 10000
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
+
+// if (process.env.NODE_ENV !== 'production') require('dotenv').config()
 // Add routes, both API and view
 app.use(routes);
 
