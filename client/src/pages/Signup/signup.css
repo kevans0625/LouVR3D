@@ -1,4 +1,6 @@
+
 .profile-avatar{
-    width: 50px!important;
-    height: 50px!important;
+    width: 10px!important;
+    height: 10px!important;
+    border-radius: 800px;
 }
