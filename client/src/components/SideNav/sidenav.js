@@ -25,8 +25,7 @@ class Sidenav extends Component {
             this.Sidenav = Sidenav;
           }}
           id="slide-out"
-          className="sidenav"
-        >
+          className="sidenav" >
           <li>
             <div className="user-view">
               <div className="background">
@@ -38,7 +37,7 @@ class Sidenav extends Component {
               <a href="#name">
                 <span className="white-text name">
                     Welcome {this.props.userData.user.username}!
-                    </span>
+                 </span>
               </a>
             </div>
           </li>
