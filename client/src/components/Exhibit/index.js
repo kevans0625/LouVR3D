@@ -1,28 +1,34 @@
-import React, { useEffect } from "react"
+import React from "react"
 import "aframe"
 import "aframe-layout-component"
 import "aframe-environment-component"
 import { Entity, Scene } from 'aframe-react'
 import Frame from "../Frame"
 import Camera from "../Camera"
-import AssetLoader from "../AssetLoader"
+import "./exhibit.css"
 
 function Exhibit(props) {
     const art = props.art
-    const srcIndex = 0;
     return (
         <div>
             <Scene>
                 <Entity environment={`preset: ${props.environment}`} />
                 <Camera />
                 <Entity light={{ type: "ambient", color: "#BBB" }} />
-                <AssetLoader assets={props.art} />
+                <a-assets timeout="3000">
+                    {art.map((asset, index)=>{
+                        return(<img src={asset.image} id={`src${index}`} key={index} />)
+                    })}
+                </a-assets>
                 <Entity layout="type: circle; plane: xz; radius: 5;" position="0 2 0">
-                    {art.map(painting => {
-                        return (<Frame image={painting.image} id={painting.title}/>)
+                    {art.map((painting, index) => {
+                        return (<Frame image={`#src${index}`} id={painting.title} src={painting.image} />)
                     })}
                 </Entity>
             </Scene>
+            {art.map((asset, index) => {
+                return ( <img src={asset.image}/>)
+            })}
         </div>
     )
 }

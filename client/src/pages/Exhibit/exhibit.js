@@ -43,7 +43,7 @@ const Exhibit = () => {
             artist: art.artistDisplayName,
             title: art.title,
             department: art.department,
-            image: art.primaryImage
+            image: art.primaryImageSmall
           }
           return art
         })
@@ -95,7 +95,7 @@ const Exhibit = () => {
         artist: savedImage.artist,
         department: savedImage.department,
         image: savedImage.image,
-        userID: userData.user.id
+        // userID: userData.user.id
       })    
       
   }

@@ -51,7 +51,7 @@ export default {
   },
   // Load favorites
   loadFavorites: function(userID) {
-    return axios.get("/api/exhibt/" + userID)
+    return axios.get("/api/exhibit/" + userID)
   },
   loadAllFavorites: function() {
     return axios.get("/api/exhibit")
