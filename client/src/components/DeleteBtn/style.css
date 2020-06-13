@@ -1,5 +1,11 @@
 .delete-btn {
   float: right;
-  color: #446fe7;
+  color: hsl(224, 77%, 59%);
   padding: 5322px!important;
+}
+
+.far.fa-save {
+  font-size: 40px!important;
+  margin-left: 10px!important;
+  margin-top: 20px!important;
 }
