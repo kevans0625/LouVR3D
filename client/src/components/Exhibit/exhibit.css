@@ -1,0 +1,17 @@
+.a-canvas{
+    z-index: auto;
+}
+#info{
+    position: absolute;
+    top: 0;
+    max-width: 500px;
+    max-height: 500px;
+}
+#displayImage{
+    max-width: -webkit-fill-available;
+    max-height: -webkit-fill-available;
+}
+#title{
+    color: black
+}
+
