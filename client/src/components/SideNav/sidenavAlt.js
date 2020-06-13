@@ -4,7 +4,7 @@ import "materialize-css/dist/css/materialize.min.css";
 import image2 from "../images/LouvreNight.jpg";
 import image1 from "../images/pyramid.jpg";
 
-class Sidenav extends Component {
+class SidenavAlt extends Component {
   componentDidMount() {
     const options = {
       inDuration: 250,
@@ -67,7 +67,7 @@ class Sidenav extends Component {
             <a href="/" className="subheader">Log Out</a>
           </li>
         </ul>
-        
+
         <a href="#!" data-target="slide-out" className="sidenav-trigger right-align">
           <i className="material-icons">menu</i>
         </a>
@@ -76,4 +76,4 @@ class Sidenav extends Component {
   }
 }
 
-export default Sidenav;
+export default SidenavAlt;
