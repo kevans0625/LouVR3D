@@ -9,6 +9,7 @@ import { Col, Row, Container } from "../../components/Grid";
 import M from "materialize-css";
 import './exhibit.css'
 import UserContext from "../../content/UserContext";
+import Sidenav from "../../components/SideNav/sidenavAlt";
 
 
 const Exhibit = () => {
@@ -114,6 +115,10 @@ let displayArt = exhibits.results;
     <div>
       {console.log(userData)}
       <div className="container">
+      <Sidenav
+              userData={userData}
+              className="right-align"
+              />
         <div className="row">
         <div className="col-md-6 col-md-offset-3">
             <h2 className="exhibitheader">Discover Le LouVr3D</h2>

@@ -2,6 +2,9 @@ import React, { useState, useEffect, useContext } from "react";
 import pyramid from "../../components/images/pyramid.jpg"
 import API from "../../utils/API";
 import UserContext from "../../content/UserContext";
+import Sidenav from "../../components/SideNav/sidenavAlt";
+
+
 const Favorite = () => {
   const {userData, setUserData} = useContext(UserContext);
   const [favorites, setFavorites] = useState([])
@@ -24,6 +27,9 @@ const Favorite = () => {
     return (
         <div>
           <div className="container ">
+          <Sidenav
+              // userData={userData}
+              />
            <div className="row">
          <div className="col-md-6 col-md-offset-3">
          <h2>My Favorites</h2>

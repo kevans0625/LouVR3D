@@ -65,9 +65,9 @@ const LouVr3D = () => {
              
   <button type="submit" className="btn btn-default" href="/viewmet"
   onClick={handleMet}>View Met Images </button>
-
+{/* 
 <button type="submit" className="btn btn-default" href="/viewmet"
-  onClick={handleLogout}>Log Out</button>
+  onClick={handleLogout}>Log Out</button> */}
   </div>
             ):(
               <>
