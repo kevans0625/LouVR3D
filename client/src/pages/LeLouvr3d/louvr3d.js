@@ -13,7 +13,7 @@ const LouVr3D = () => {
   const history = useHistory(); 
 
   const handleMet = () => {
-    history.push("/metview")
+    history.push("/view")
   }
 
 
@@ -28,7 +28,7 @@ const LouVr3D = () => {
 
 
   const handleView = () => {
-    history.push("/viewlouvr3d")
+    history.push("/upload")
   //   window.location.replace("/signup");
   }
 
