@@ -13,7 +13,7 @@ import Sidenav from "../../components/SideNav/sidenavAlt";
 
 
 const Exhibit = () => {
-  const {userData, setUserData} = useContext(UserContext);
+  const { userData, setUserData } = useContext(UserContext);
   const [exhibits, setExhibits] = useState([])
   const [formObject, setFormObject] = useState({
     search: "",
@@ -83,7 +83,7 @@ const Exhibit = () => {
     loadExhibits(formObject.search)
   }
 
-  const history = useHistory(); 
+  const history = useHistory();
 
   const handleFavorites = () => {
     history.push("/favorites")
@@ -100,17 +100,17 @@ const Exhibit = () => {
     console.log(exhibits.results.find(result => result.key === key))
     const savedImage = exhibits.results.find(result => result.key === key)
     console.log(savedImage)
-      API.saveImage({
-        title: savedImage.title,
-        artist: savedImage.artist,
-        department: savedImage.department,
-        image: savedImage.image,
-        // userID: userData.user.id
-      })    
-      
+    API.saveImage({
+      title: savedImage.title,
+      artist: savedImage.artist,
+      department: savedImage.department,
+      image: savedImage.image,
+      // userID: userData.user.id
+    })
+
   }
 
-let displayArt = exhibits.results;
+  let displayArt = exhibits.results;
   return (
     <div>
       {console.log(userData)}
@@ -120,23 +120,23 @@ let displayArt = exhibits.results;
               className="right-align"
               />
         <div className="row">
-        <div className="col-md-6 col-md-offset-3">
+          <div className="col-md-6 col-md-offset-3">
             <h2 className="exhibitheader">Discover Le LouVr3D</h2>
             <div className="row">
-              <img className="circle"
+              <img
                 alt=""
                 src={pyramid}
               //  onClick={}
               />
             </div>
             <button type="submit" className="btn btn-default" href="/favorites"
-            onClick={handleFavorites}> View Favorites</button>
+              onClick={handleFavorites}> View Favorites</button>
 
             {/* <button className="btn btn-default"
             >My Profile</button> */}
 
             <button type="submit" className="btn btn-default" href="/splash"
-            onClick={handleSplash}>Le LouVr3D Exhibit</button>
+              onClick={handleSplash}>Le LouVr3D Exhibit</button>
 
             <form>
               <Input
@@ -149,34 +149,38 @@ let displayArt = exhibits.results;
             </form>
             <Row >
               <Col size="md-6 sm-12">
-              {displayArt ? (
-                <ul className="collection">
-                  {console.log(exhibits)}
-                {displayArt.map(exhibit => (
-                  <li key={exhibit.key} className="collection-item avatar">
-                    {/* <Col size="md-6 sm-12"> */}
-      
-                  <img src={exhibit.image} alt={exhibit.title}  className="circle img-fav"/>
+                {displayArt ? (
+                  <ul className="collection">
+                    {console.log(exhibits)}
+                    {displayArt.map(exhibit => (
+                      <li key={exhibit.key} className="collection-item avatar">
+                        {/* <Col size="md-6 sm-12"> */}
+                        {/*       
+
                     {/* <img src="images/yuna.jpg" alt="" className="circle"/> */}
-                    <span className="title">{exhibit.title} </span>
-                    <p>
-                  {/* {exhibit.title} <br></br> */}
+                        <span className="title">{exhibit.title} </span>
+                        <p>
+                          {/* {exhibit.title} <br></br> */}
                   by {exhibit.artist ? (exhibit.artist) : ("Artist Unknown")}
-                    </p>
-                  <DeleteBtn onClick={() => addArt(exhibit.key)} className="secondary-content"/>
-                    {/* <a href="#!" className="secondary-content"><i className="material-icons">grade</i></a> */}
-                    {/* </Col> */}
-                  </li>
-                ))}
-                </ul>
-              ) : (
-                <>
-                <h5>Search through collections of art for images you would like to favorite.</h5>
-                <p>
-                  Powered by The Metropolitan Museum of Art Collection API.
+                        </p>
+                        <Col size="md-6 sm-12">
+                          <img src={exhibit.image} style={{ width: "100px" }} />
+
+                          <DeleteBtn onClick={() => addArt(exhibit.key)} className="secondary-content" />
+                        </Col>
+                        {/* <a href="#!" className="secondary-content"><i className="material-icons">grade</i></a> */}
+                        {/* </Col> */}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                    <>
+                      <h5>Search through collections of art for images you would like to favorite.</h5>
+                      <p>
+                        Powered by The Metropolitan Museum of Art Collection API.
                 </p>
-                </>
-              )}
+                    </>
+                  )}
               </Col>
             </Row>
           </div>
