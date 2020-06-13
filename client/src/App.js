@@ -12,6 +12,7 @@ import LouVr3d from './pages/LeLouvr3d/louvr3d';
 import UserContext from "../src/content/UserContext";
 import Viewing from "./pages/Viewing/index";
 import UploadExhibit from "./pages/UploadExhibit/index";
+import Concept from "./pages/Concept/index";
 import Axios from "axios";
 
 function App() {
@@ -65,7 +66,8 @@ function App() {
       <Route exact path="/favorites" component={Favorites} />
       <Route exact path="/louvr3d" component={LouVr3d} />
       <Route exact path="/view" component={Viewing} />
-      <Route exact path="/louvr3d" component={UploadExhibit} />
+      <Route exact path="/upload" component={UploadExhibit} />
+      <Route exact path="/concept" component={Concept} />
       {/* <Route exact path="/users/:id"/>   */}
       </Switch>
     </div>
