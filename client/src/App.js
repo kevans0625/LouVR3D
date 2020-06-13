@@ -66,7 +66,7 @@ function App() {
       <Route exact path="/favorites" component={Favorites} />
       <Route exact path="/louvr3d" component={LouVr3d} />
       <Route exact path="/view" component={Viewing} />
-      <Route exact path="/louvr3d" component={UploadExhibit} />
+      <Route exact path="/upload" component={UploadExhibit} />
       <Route exact path="/concept" component={Concept} />
       {/* <Route exact path="/users/:id"/>   */}
       </Switch>

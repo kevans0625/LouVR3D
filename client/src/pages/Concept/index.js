@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import 'aframe'
 import 'aframe-layout-component'
 import { Entity, Scene } from 'aframe-react'
