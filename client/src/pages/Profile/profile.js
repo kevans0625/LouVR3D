@@ -8,7 +8,7 @@ import API from "../../utils/API";
 import './splash.css';
 // import HomeScene from "../../components/HomeScene/index"
 import UserContext from "../../content/UserContext";
-import ImageModal from "./ImageModal"
+import ImageModal from "../Splash/ImageModal"
 import AvatarModal from "./AvatarModal"
 
 const Profile = () => {

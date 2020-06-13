@@ -24,7 +24,7 @@ const Splash = () => {
   }
 
   const handleExhibit = () => {
-    history.push("/")
+    history.push("/louvr3d")
   }
 
   const handleLogin = () => {

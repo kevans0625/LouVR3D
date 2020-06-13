@@ -12,7 +12,7 @@ class Sidenav extends Component {
       draggable: true
     };
     M.Sidenav.init(this.Sidenav);
-
+    
     let instance = M.Sidenav.getInstance(this.Sidenav);
     // instance.open();
     console.log(instance.isOpen);
@@ -38,7 +38,6 @@ class Sidenav extends Component {
               <a href="#name">
                 <span className="white-text name">
                     Welcome {this.props.userData.user.username}!
-                   
                     </span>
               </a>
             </div>
@@ -54,7 +53,7 @@ class Sidenav extends Component {
             </a>
           </li>
           <li>
-            <a href="/">
+            <a href="/louvr3d">
             <i className="material-icons">photo_library</i>Visit Le LouVr3D Exhibit
             </a>
           </li>
