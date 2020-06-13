@@ -36,14 +36,14 @@ const Signup = () => {
     event.preventDefault();
     // var ele = document.getElementsByTagName('input');
     // console.log(ele.checked)
-    let imagelink = $('input[name="avatarCheck"]:checked').val();
-    console.log(imagelink)
+    // let imagelink = $('input[name="avatarCheck"]:checked').val();
+    // console.log(imagelink)
     if (formObject.username && formObject.email && formObject.password) {
       API.saveUser({
         username: formObject.username,
         email: formObject.email,
         password: formObject.password,
-        avatar: imagelink,
+        // avatar: imagelink,
       }).then((res) => {
         // console.log(res)
         // console.log(imagelink)
@@ -127,7 +127,7 @@ const Signup = () => {
                           onChange={handleInputChange}
                           name="password" />
                       </div>
-
+{/* 
                       <h2 className="">Select A Patronage</h2>
                       <p>Be sure to hit save to submit the change</p>
                       <div className="form-group">
@@ -189,7 +189,7 @@ const Signup = () => {
                             <span>Frida</span>
                           </label>
                         </p>
-                      </div>
+                      </div> */}
                       <button type="submit" className="btn btn-default"
                         disabled={!(formObject.username || formObject.email || formObject.password)}
                         onClick={handleFormSubmit}

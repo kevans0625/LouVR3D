@@ -32,7 +32,7 @@ class Sidenav extends Component {
                 <img src={image2} />
               </div>
              
-                <img className="circle" src={this.props.userData.user.avatar} />
+                <img className="circle" src={image1} />
               
                 <span className="white-text name">
                     Welcome {this.props.userData.user.username}!
