@@ -83,7 +83,7 @@ const Signup = () => {
       <div className="container">
         <div className="row">
           <div className="col-md-6 col-md-offset-3">
-            <div className="col-md-6 col-md-offset-3">
+          
               {/* <h2>Welcome{}</h2> */}
               <img id="pyramid" alt="" src={pyramid}/>
               <br />
@@ -204,7 +204,7 @@ const Signup = () => {
           </div>
         </div>
       </div>
-    </div>
+
 
 
   )

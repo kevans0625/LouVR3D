@@ -62,14 +62,19 @@ class Sidenav extends Component {
           </li>
           
           <li>
-            <div className="divider" />
-          </li>
-          <li>
          
             <a href="/">
             <i className="material-icons">directions_run</i>Log Out
             </a>
           </li>
+          <li>
+            <div className="divider" />
+          </li>
+          <li>
+         <a href="/concept">
+         <i className="material-icons">code</i>Demo Concept
+         </a>
+       </li>
         </ul>
         <a href="#!" data-target="slide-out" className="sidenav-trigger right-align">
           <i className="material-icons">menu</i>
