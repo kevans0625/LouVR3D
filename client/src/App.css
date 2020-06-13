@@ -6,6 +6,15 @@
   color: red;
 }
 
+body{
+  background: url("./components/images/lelouvre.jpg");
+  background-size: cover;
+  overflow: scroll;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: white;
+}
+
 /* .App-logo {
   height: 40vmin;
   pointer-events: none;
