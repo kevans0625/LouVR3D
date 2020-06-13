@@ -2,7 +2,7 @@ import React, {Component}from "react";
 import ImageUploader from 'react-images-upload';
 import API from "../../utils/API";
 import './splash.css';
-
+import M from "materialize-css"
 
 class ImageUpload extends Component {
 
@@ -26,6 +26,7 @@ class ImageUpload extends Component {
          console.log(data.values())
          return API.imageUpload(data)
            })
+          M.toast({ html: 'Image Uploaded Successfully!' })
            API.allImages(uploadPromises)
            .then(results =>{
              console.log(results);
