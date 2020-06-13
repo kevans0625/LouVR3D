@@ -7,7 +7,7 @@ function AssetLoader(props) {
     var mapIndex = 0;
     const loaded = assets.map(asset => {
         mapIndex ++;
-        return <img id={`src${mapIndex}`} src={asset}/>
+        return <img id={`src${mapIndex}`} src={asset} width="300px" height="300px"/>
     })
 
     return(

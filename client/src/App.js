@@ -1,4 +1,4 @@
-  
+
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
@@ -9,8 +9,9 @@ import Splash from './pages/Splash/splash';
 import Exhibit from './pages/Exhibit/exhibit';
 import Favorites from './pages/Favorites/favorites';
 import UserContext from "../src/content/UserContext";
+import Viewing from "./pages/Viewing/index";
+import UploadExhibit from "./pages/UploadExhibit/index";
 import Axios from "axios";
-
 
 function App() {
   const [userData, setUserData] = useState({
@@ -23,7 +24,7 @@ function App() {
       let token = localStorage.getItem("auth-token");
       if (token === null) {
         localStorage.setItem("auth-token", "");
-        token = ""; 
+        token = "";
       }
       const tokenRes = await Axios.post(
         "/api/tokenIsValid",
@@ -32,9 +33,9 @@ function App() {
       );
       if (tokenRes) {
         const userRes = await Axios.get("/api/validUser",
-        {
-          headers: { "x-auth-token": token },
-        });
+          {
+            headers: { "x-auth-token": token },
+          });
         setUserData({
           token,
           user: userRes.data,
@@ -61,6 +62,8 @@ function App() {
       <Route exact path="/splash" component={Splash} /> 
       <Route exact path="/exhibit" component={Exhibit} />
       <Route exact path="/favorites" component={Favorites} />
+      <Route exact path="/view" component={Viewing} />
+      <Route exact path="/louvr3d" component={UploadExhibit} />
       {/* <Route exact path="/users/:id"/>   */}
       </Switch>
     </div>

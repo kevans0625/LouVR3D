@@ -80,7 +80,7 @@ const Splash = () => {
                     onClick={handleFavorites}>View Member Favorites</button>
                 </div>
                 <div className="col s12 m6">
-                  <button type="submit" className="btn btn-default" href="/login"
+                  <button type="submit" className="btn btn-default" href="/louvr3d"
                     onClick={handleExhibit}>Le LouVr3D</button>
                 </div>
                 <div className="col s12 m12">
