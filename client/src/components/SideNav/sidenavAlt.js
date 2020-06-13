@@ -4,10 +4,6 @@ import "materialize-css/dist/css/materialize.min.css";
 import image2 from "../images/LouvreNight.jpg";
 import image1 from "../images/pyramid.jpg";
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 162197c7b383483f8fddf9315ed1b3d623e398ea
 class SidenavAlt extends Component {
   componentDidMount() {
     const options = {
@@ -16,18 +12,11 @@ class SidenavAlt extends Component {
       draggable: true
     };
     M.Sidenav.init(this.Sidenav);
-<<<<<<< HEAD
-    
-=======
->>>>>>> 162197c7b383483f8fddf9315ed1b3d623e398ea
     let instance = M.Sidenav.getInstance(this.Sidenav);
     // instance.open();
     console.log(instance.isOpen);
   }
-<<<<<<< HEAD
-=======
   
->>>>>>> 162197c7b383483f8fddf9315ed1b3d623e398ea
   render() {
     return (
       <div>
@@ -42,20 +31,10 @@ class SidenavAlt extends Component {
               <div className="background">
                 <img src={image2} />
               </div>
-<<<<<<< HEAD
-             
-                <img className="circle" src={image1} />
-              
-                <span className="white-text name">
-                    Welcome Patronage!
-                 </span>
-             
-=======
                 <img className="circle" src={image1} />
                 <span className="white-text name">
                     Welcome Patronage!
                  </span>
->>>>>>> 162197c7b383483f8fddf9315ed1b3d623e398ea
             </div>
           </li>
           <li>
@@ -65,20 +44,12 @@ class SidenavAlt extends Component {
           </li>
           <li>
             <a href="/exhibit">
-<<<<<<< HEAD
-              <i className="material-icons">search</i>Discover Art 
-=======
               <i className="material-icons">search</i>Discover Art
->>>>>>> 162197c7b383483f8fddf9315ed1b3d623e398ea
             </a>
           </li>
           <li>
             <a href="/favorites">
-<<<<<<< HEAD
-              <i className="material-icons">star_half </i>View Favorites 
-=======
               <i className="material-icons">star_half </i>View Favorites
->>>>>>> 162197c7b383483f8fddf9315ed1b3d623e398ea
             </a>
           </li>
           <li>
@@ -92,17 +63,7 @@ class SidenavAlt extends Component {
           <li>
             <a href="/" className="subheader">Log Out</a>
           </li>
-<<<<<<< HEAD
-          <li>
-         <a href="/concept">
-         <i className="material-icons">directions_run</i>Demo Concept
-         </a>
-       </li>
         </ul>
-
-=======
-        </ul>
->>>>>>> 162197c7b383483f8fddf9315ed1b3d623e398ea
         <a href="#!" data-target="slide-out" className="sidenav-trigger right-align">
           <i className="material-icons">menu</i>
         </a>
@@ -110,9 +71,4 @@ class SidenavAlt extends Component {
     );
   }
 }
-<<<<<<< HEAD
-
 export default SidenavAlt;
-=======
-export default SidenavAlt;
->>>>>>> 162197c7b383483f8fddf9315ed1b3d623e398ea
