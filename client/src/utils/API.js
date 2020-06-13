@@ -38,6 +38,9 @@ export default {
     console.log(Data)
   return axios.all(Data)
   },
+  getImages: function() {
+    return axios.get("/api/images")
+},
   // Met API Call
   getMet: function(query) {
     return axios.get(METURL + query)

@@ -4,6 +4,7 @@ import API from "../../utils/API";
 import M from "materialize-css"
 import UserContext from "../../content/UserContext";
 import Modal from "../Signup/modal"
+import Sidenav from "../../components/SideNav/sidenav";
 
 const Login = () => {
     const [users, setUsers] = useState([])
@@ -21,7 +22,7 @@ const Login = () => {
       ).catch(err => console.log(err))
     }, [])
    
-    const {setUserData} = useContext(UserContext);
+    const {userData, setUserData} = useContext(UserContext);
 
     const history = useHistory()
   
@@ -57,14 +58,38 @@ const Login = () => {
     }
   
 
+    const handleLogout = () => {
+      setUserData({
+        token: undefined,
+        user: undefined
+      })
+      localStorage.setItem("auth-token", "")
+     //   window.location.replace("/signup");
+     }
 
     return (
         <div>
         <div className="container">
          <div className="row">
        <div className="col-md-6 col-md-offset-3">
-      <h2>Welcome to Le LouVr3D</h2>
-      <form className="signup">
+     
+
+      {userData.user ? (
+        
+        <div className="col s12">
+        <h2>{userData.user.username}, you are already logged in.</h2>
+               <Sidenav
+              userData={userData}
+              />
+            <button type="submit" className="btn btn-default" href="/login"
+              onClick={handleLogout}>Logout</button>
+              </div>
+
+            ):(
+              <>
+          <h2>Login to Le LouVr3D</h2>
+
+                <form className="signup">
       <div className="form-group">
           <input 
           // type="username"  
@@ -91,6 +116,9 @@ const Login = () => {
       </form>
       <br/>
       <Modal/>
+              </>
+            )}
+     { console.log(userData)}
       {/* <p>Sign Up <a href="/signup">here</a></p> */}
     </div>
     </div>
