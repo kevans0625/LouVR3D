@@ -77,7 +77,7 @@ const Login = () => {
       {userData.user ? (
         
         <div className="col s12">
-        <h2>{userData.user.username}, you are already logged in.</h2>
+        <h2 className="white-text">{userData.user.username}, you are already logged in.</h2>
                <Sidenav
               userData={userData}
               />
@@ -87,7 +87,7 @@ const Login = () => {
 
             ):(
               <>
-          <h2>Login to Le LouVr3D</h2>
+          <h2 className="white-text">Login to Le LouVr3D</h2>
 
                 <form className="signup">
       <div className="form-group">

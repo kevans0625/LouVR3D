@@ -66,6 +66,11 @@ class SidenavAlt extends Component {
           <li>
             <a href="/" className="subheader">Log Out</a>
           </li>
+          <li>
+         <a href="/concept">
+         <i className="material-icons">directions_run</i>Demo Concept
+         </a>
+       </li>
         </ul>
 
         <a href="#!" data-target="slide-out" className="sidenav-trigger right-align">

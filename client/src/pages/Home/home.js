@@ -40,9 +40,9 @@ const Home = () => {
             <img id="pyramid" alt="" src={pyramid} />
             <br />
             <h2 className="homeheader">Welcome to Le LouVr3D</h2>
-            <h5>TOUCH, DIVE &amp; EXPLORE</h5>
+            <h5 className="white-text">TOUCH, DIVE, &amp; EXPLORE</h5>
 
-<p>Creating a virtual world of 3D experiences</p>
+<p className="white-text">Creating a virtual world of 3D experiences</p>
             {userData.user ? (
               
               <div className="col s12">

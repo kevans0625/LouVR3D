@@ -71,7 +71,7 @@ const Splash = () => {
             <h2 className="splashheader">Welcome to Le LouVr3D</h2>
             {userData.user ? (
               <>
-                <p>View the vast collection of the art.</p>
+                <p className="white-text">View the vast collection of the art.</p>
                 <Sidenav
                   userData={userData}
                 />
@@ -88,10 +88,10 @@ const Splash = () => {
                     onClick={handleLogout}>Logout</button>
                 </div>
 
-                <div className="col s6">
+                {/* <div className="col s6">
         <button type="submit" className="btn btn-default" href="/login"
           onClick={handleTestRun}>Test Run</button>
-          </div>
+          </div> */}
           <ImageModal className="btn btn-default" />
               </>
             ) : (

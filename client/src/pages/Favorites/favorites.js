@@ -41,7 +41,7 @@ const Favorite = () => {
         <div className="row">
 
           <div className="col-md-6 col-md-3">
-            <h2>My Favorites</h2>
+            <h2 className="white-text">My Favorites</h2>
             <button type="submit" className="btn btn-default" href="/exhibit"
               onClick={handleExhibit}>Add More To Your Favorites </button>
           </div>

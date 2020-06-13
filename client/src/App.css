@@ -12,8 +12,9 @@ body{
   overflow: scroll;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  color: white;
+  /* color: white; */
 }
+
 
 
 

@@ -175,8 +175,8 @@ const Exhibit = () => {
                   </ul>
                 ) : (
                     <>
-                      <h5>Search through collections of art for images you would like to favorite.</h5>
-                      <p>
+                      <h5 className="white-text">Search through collections of art for images you would like to favorite.</h5>
+                      <p className="white-text">
                         Powered by The Metropolitan Museum of Art Collection API.
                 </p>
                     </>
