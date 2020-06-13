@@ -20,7 +20,8 @@ module.exports = {
         .create({
             username: req.body.username,
             email: req.body.email,
-            password: req.body.password
+            password: req.body.password,
+            avatar: req.body.avatar
         })
         .then(dbModel => res.json(dbModel))
         .catch(function(err) {
