@@ -5,7 +5,7 @@ const exhibitRoutes = require("./exhibit")
 const db = require("../../models");
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
-const auth = require("../../middelware/auth")
+const auth = require("../../middleware/auth")
 
 router.use("/user", userRoutes);
 

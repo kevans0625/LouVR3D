@@ -3,6 +3,7 @@ const METURL = "https://collectionapi.metmuseum.org/public/collection/v1/search?
 const METOBJECTURL = "https://collectionapi.metmuseum.org/public/collection/v1/objects/";
 const harvardAPI = "";
 const harvardAPIKey = "5e4cb7f0-a534-11ea-888a-71ff56d3b1a0";
+
 export default {
   // Gets all users
   getUsers: function(userData) {
@@ -10,7 +11,7 @@ export default {
     return axios.get("/api/user");
   },
   // Gets the User with the given id
-  getUser: function(id) {
+  getUser: function(id){
     return axios.get("/api/user/" + id);
   },
   // Deletes the User with the given id
