@@ -8,6 +8,7 @@ import Camera from "../Camera"
 
 function BucketExhibit(props) {
     const art = props.art
+    console.log(props)
     return (
         <div>
             <Scene>
@@ -21,7 +22,7 @@ function BucketExhibit(props) {
                 </a-assets>
                 <Entity layout="type: circle; plane: xz; radius: 5;" position="0 2 0">
                     {art.map((painting, index) => {
-                        return (<Frame image={`#src${index}`} id={painting.title} src={painting.fileLink} />)
+                        return (<Frame image={`#src${index}`} id={painting.s3_key} src={`https://louvr3d.s3.us-east-2.amazonaws.com/${painting.s3_key}`} />)
                     })}
                 </Entity>
             </Scene>
