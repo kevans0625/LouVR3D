@@ -95,7 +95,7 @@ const Signup = () => {
                 </div>
               ) : (
                   <>
-                    <h2 className="white-text">Sign Up Form</h2>
+                    <h2>Sign Up Form</h2>
                     <form className="signup">
                       <div className="form-group">
                         <input
@@ -126,67 +126,67 @@ const Signup = () => {
                           onChange={handleInputChange}
                           name="password" />
                       </div>
-                      <h5 className="white-text">Select A Patronage Avatar</h5>
-                      <p className="white-text">Be sure to hit save to submit the change</p>
-                      <div className="  col s12 center">
+                      {/* <h5 >Select A Patronage Avatar</h5> */}
+                      <p >Select A Patronage</p>
+                      <div className="s5 center">
 
                         <p className="col s6 m3">
-                          <img className=" circle profile-avatar" style={{width: "100px"}} alt="avatar1" src="https://api.adorable.io/avatars/face/eyes1" />
+                          <img className=" circle profile-avatar" style={{width: "100px"}}  alt="avatar1" src="https://api.adorable.io/avatars/face/eyes1" />
                           <label>
                             <input type="radio" name="avatarCheck" value="https://api.adorable.io/avatars/face/eyes1" />
-                            <span  className="white-text">Gogh</span>
+                            <span  >Gogh</span>
                           </label>
                         </p>
                         <p className="col s6 m3">
                           <img className=" circle profile-avatar" style={{width: "100px"}} alt="avatar2" src="https://api.adorable.io/avatars/face/eyes2" />
-                          <label className="white-text">
+                          <label >
                             <input type="radio" name="avatarCheck" value="https://api.adorable.io/avatars/face/eyes2" />
                             <span>Bourgeois</span>
                           </label>
                         </p>
                         <p className="col s6 m3">
-                          <img className=" circle profile-avatar" style={{width: "100px"}} alt="avatar3" src="https://api.adorable.io/avatars/face/eyes3" />
-                          <label className="white-text">
+                          <img className=" circle profile-avatar"  style={{width: "100px"}} alt="avatar3" src="https://api.adorable.io/avatars/face/eyes3" />
+                          <label >
                             <input type="radio" name="avatarCheck" value="https://api.adorable.io/avatars/face/eyes3" />
                             <span lassName="white-text">Vinci</span>
                           </label>
                         </p>
                         <p className="col s6 m3">
-                          <img className=" circle profile-avatar" style={{width: "100px"}} alt="avatar4" src="https://api.adorable.io/avatars/face/eyes4" />
-                          <label className="white-text">
+                          <img className="circle profile-avatar" style={{width: "100px"}} alt="avatar4" src="https://api.adorable.io/avatars/face/eyes4" />
+                          <label >
                             <input type="radio" name="avatarCheck" value="https://api.adorable.io/avatars/face/eyes4" />
                             <span lassName="white-text">Basquiat</span>
                           </label>
                         </p>
 
-                        <p className="col s6 m3">
-                          <img className=" circle profile-avatar" style={{width: "100px"}} alt="avatar5" src="https://api.adorable.io/avatars/face/eyes5" />
-                         <label className="white-text">
+                        {/* <p className="col s6 m3">
+                          <img className=" circle profile-avatar" alt="avatar5" src="https://api.adorable.io/avatars/face/eyes5" />
+                          <label>
                             <input type="radio" name="avatarCheck" value="https://api.adorable.io/avatars/face/eyes" />
                             <span>Monet</span>
                           </label>
                         </p>
                         <p className="col s6 m3">
-                          <img className=" circle profile-avatar" style={{width: "100px"}} alt="avatar6" src="https://api.adorable.io/avatars/face/eyes6" />
-                         <label className="white-text">
+                          <img className=" circle profile-avatar" alt="avatar6" src="https://api.adorable.io/avatars/face/eyes6" />
+                          <label>
                             <input type="radio" name="avatarCheck" value="https://api.adorable.io/avatars/face/eyes6" />
                             <span>Jules</span>
                           </label>
                         </p>
                         <p className="col s6 m3">
-                          <img className=" circle profile-avatar" style={{width: "100px"}} alt="avatar7" src="https://api.adorable.io/avatars/face/eyes7" />
-                         <label className="white-text">
+                          <img className=" circle profile-avatar" alt="avatar7" src="https://api.adorable.io/avatars/face/eyes7" />
+                          <label>
                             <input type="radio" name="avatarCheck" value="https://api.adorable.io/avatars/face/eyes7" />
-                            <span>Michel</span>
+                            <span>Michelangelo</span>
                           </label>
                         </p>
                         <p className="col s6 m3">
-                          <img className=" circle profile-avatar" style={{width: "100px"}} alt="avatar8" src="https://api.adorable.io/avatars/face/eyes8" />
-                         <label className="white-text">
+                          <img className=" circle profile-avatar" alt="avatar8" src="https://api.adorable.io/avatars/face/eyes8" />
+                          <label>
                             <input type="radio" name="avatarCheck" value="https://api.adorable.io/avatars/face/eyes8" />
                             <span>Frida</span>
                           </label>
-                        </p>
+                        </p> */}
                       </div>
                       
                       <button type="submit" className="btn btn-default"

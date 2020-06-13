@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import M from "materialize-css";
-import Signup from "./signup";
+import Signup from "./signupAlt";
 import "materialize-css/dist/css/materialize.min.css";
 
 class SignupModal extends Component {

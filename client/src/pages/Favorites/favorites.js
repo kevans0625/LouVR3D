@@ -73,7 +73,7 @@ const Favorite = () => {
           ) : (
 
               <div>
-                <h3>Nothing to display</h3>
+                <h3 className="white-text">Nothing to display</h3>
               </div>
             )}
             

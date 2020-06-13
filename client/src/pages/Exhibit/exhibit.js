@@ -147,42 +147,44 @@ const Exhibit = () => {
                 onClick={handleFormSubmit}
               />
             </form>
-            <Row >
-              <Col size="md-6 sm-12">
-                {displayArt ? (
-                  <ul className="collection">
-                    {console.log(exhibits)}
-                    {displayArt.map(exhibit => (
-                      <li key={exhibit.key} className="collection-item avatar" >
-                        {/* <Col size="md-6 sm-12"> */}
-                        {/*       
+            
+            {displayArt ? (
+            <div className="col">
 
-                    {/* <img src="images/yuna.jpg" alt="" className="circle"/> */}
-                        <span className="title size">{exhibit.title} </span>
-                        <p>
-                          {/* {exhibit.title} <br></br> */}
-                  by {exhibit.artist ? (exhibit.artist) : ("Artist Unknown")}
-                        </p>
-                        <Col size="md-6 sm-12">
-                          <img src={exhibit.image} style={{ width: "300px" }} />
+              {displayArt.map(exhibit => (
+                <div className="col s12 m6 ">
+                <div className="card">
 
-                          <DeleteBtn onClick={() => addArt(exhibit.key)} className="secondary-content" />
-                        </Col>
-                        {/* <a href="#!" className="secondary-content"><i className="material-icons">grade</i></a> */}
-                        {/* </Col> */}
-                      </li>
-                    ))}
-                  </ul>
-                ) : (
-                    <>
-                      <h5 className="white-text">Search through collections of art for images you would like to favorite.</h5>
+                  <div className="card-image">
+                    <img alt="" src={exhibit.image} />
+                    <DeleteBtn onClick={() => addArt(exhibit.key)} className="secondary-content" />
+                  </div>
+
+                  <div className="card-content">
+                    <span> <h5>{exhibit.title} by {exhibit.artist ? (exhibit.artist) : ("Artist Unknown")}</h5></span>
+                  </div>
+
+                  <div className="card-action">
+                    <a href={exhibit.image}>View Image on the Met yo!</a>
+                        
+                  </div>
+
+                </div>
+                </div>
+              ))}
+            </div>
+
+          ) : (
+
+              <div>
+                 <h5 className="white-text">Search through collections of art for images you would like to favorite.</h5>
                       <p className="white-text">
                         Powered by The Metropolitan Museum of Art Collection API.
                 </p>
-                    </>
-                  )}
-              </Col>
-            </Row>
+              </div>
+            )}
+            
+
           </div>
         </div>
       </div>
@@ -190,3 +192,5 @@ const Exhibit = () => {
   )
 }
 export default Exhibit;
+
+

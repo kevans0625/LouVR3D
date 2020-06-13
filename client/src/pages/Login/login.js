@@ -73,7 +73,7 @@ const Login = () => {
          <div className="row">
        <div className="col-md-6 col-md-offset-3">
      
-
+<br/>
       {userData.user ? (
         
         <div className="col s12">
@@ -116,6 +116,8 @@ const Login = () => {
       </form>
       <br/>
       <Modal/>
+      {/* <p>Or signup <a data-target="modal1" class=" modal-trigger">here</a></p> */}
+      
               </>
             )}
      { console.log(userData)}
