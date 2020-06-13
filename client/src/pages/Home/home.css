@@ -1,9 +1,8 @@
 body {
     text-align: left!important;
   }
-  canvas{
-    z-index: -1;
-    position: absolute;
+#home{
+    z-index: -1
 }
 
 .container{

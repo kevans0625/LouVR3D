@@ -12,3 +12,5 @@ function Camera() {
         </a-camera>
     )
 }
+
+export default Camera 

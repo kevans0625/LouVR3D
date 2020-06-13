@@ -5,9 +5,8 @@ import "aframe-environment-component"
 import { Entity, Scene } from 'aframe-react'
 import Frame from "../Frame"
 import Camera from "../Camera"
-import "./exhibit.css"
 
-function Exhibit(props) {
+function BucketExhibit(props) {
     const art = props.art
     return (
         <div>
@@ -22,15 +21,12 @@ function Exhibit(props) {
                 </a-assets>
                 <Entity layout="type: circle; plane: xz; radius: 5;" position="0 2 0">
                     {art.map((painting, index) => {
-                        return (<Frame image={`#src${index}`} id={painting.title} src={painting.image} />)
+                        return (<Frame image={`#src${index}`} id={painting.title} src={painting.fileLink} />)
                     })}
                 </Entity>
             </Scene>
-            {art.map((asset, index) => {
-                return ( <img src={asset.image}/>)
-            })}
         </div>
     )
 }
 
-export default Exhibit
+export default BucketExhibit
