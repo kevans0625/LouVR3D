@@ -13,3 +13,8 @@ button{
     margin-right: 10px!important;
     margin-left: 10px!important;
 }
+
+.size {
+    font-size: 20px!important;
+    font-weight: bold!important;
+}
