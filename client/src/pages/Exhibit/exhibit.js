@@ -4,12 +4,11 @@ import API from "../../utils/API";
 import { SearchButton, Input } from "../../components/SearchBar/SearchBar";
 import { List, ListItem } from "../../components/List"
 import DeleteBtn from "../../components/DeleteBtn/index";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import M from "materialize-css";
 import './exhibit.css'
 import UserContext from "../../content/UserContext";
-
 
 
 const Exhibit = () => {
@@ -83,6 +82,16 @@ const Exhibit = () => {
     loadExhibits(formObject.search)
   }
 
+  const history = useHistory(); 
+
+  const handleFavorites = () => {
+    history.push("/favorites")
+  }
+
+  const handleSplash = () => {
+    history.push("/splash")
+  }
+
   let { id } = useParams()
 
   const addArt = (key) => {
@@ -114,11 +123,15 @@ let displayArt = exhibits.results;
               //  onClick={}
               />
             </div>
-            <button className="btn btn-default"> View Favorites</button>
-            <button className="btn btn-default"
-            >My Profile</button>
-            <button className="btn btn-default"
-            >Le LouVr3D Exhibit</button>
+            <button type="submit" className="btn btn-default" href="/favorites"
+            onClick={handleFavorites}> View Favorites</button>
+
+            {/* <button className="btn btn-default"
+            >My Profile</button> */}
+
+            <button type="submit" className="btn btn-default" href="/splash"
+            onClick={handleSplash}>Le LouVr3D Exhibit</button>
+
             <form>
               <Input
                 name="search"
