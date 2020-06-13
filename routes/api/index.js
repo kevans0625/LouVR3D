@@ -37,6 +37,7 @@ router.post("/login", async function(req, res) {
       user: {
         id: user._id,
         displayName: user.username,
+        avatar: user.avatar
       },
     });
     console.log(token)
