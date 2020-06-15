@@ -3,7 +3,8 @@ import pyramid from "../../components/images/pyramid.jpg"
 import API from "../../utils/API"
 import UserContext from "../../content/UserContext";
 import $ from "jquery"
-
+import Axios from "axios"
+import { json } from "body-parser";
 
 const Avatar = () => {
     const { userData, setUserData } = useContext(UserContext);
@@ -13,13 +14,17 @@ const Avatar = () => {
 
     const addAvatar = (image) => {
         console.log(image)
-
+    //    var string = json.toString(image)
   var id = { _id: userData.user.id };
   var newImage = {$set: {avatar: image} };
+
+  
         return API.modifyUser(
-            id, newImage
+             userData.user.id,
+             {avatar: image}
          )
             .then(res => {
+
                console.log(res)
             })
     }

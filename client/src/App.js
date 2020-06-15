@@ -6,6 +6,7 @@ import Home from './pages/Home/home';
 import Login from './pages/Login/login';
 import Signup from './pages/Signup/signup';
 import Splash from './pages/Splash/splash';
+import Profile from './pages/Profile/profile';
 import Exhibit from './pages/Exhibit/exhibit';
 import Favorites from './pages/Favorites/favorites';
 import LouVr3d from './pages/LeLouvr3d/louvr3d';
@@ -61,7 +62,8 @@ function App() {
       <Route exact path="/" component={Home} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/signup" component={Signup} />
-      <Route exact path="/splash" component={Splash} /> 
+      <Route exact path="/splash" component={Splash} />
+      <Route exact path="/profile" component={Profile} /> 
       <Route exact path="/exhibit" component={Exhibit} />
       <Route exact path="/favorites" component={Favorites} />
       <Route exact path="/louvr3d" component={LouVr3d} />
