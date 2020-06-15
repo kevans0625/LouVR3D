@@ -5,7 +5,7 @@ import pyramid from "../../components/images/pyramid.jpg"
 import avatar from "../../components/images/Missing_avatar.png"
 // import ImageUploader from 'react-images-upload';
 import API from "../../utils/API";
-import './splash.css';
+import './profile.css';
 // import HomeScene from "../../components/HomeScene/index"
 import UserContext from "../../content/UserContext";
 import ImageModal from "../Splash/ImageModal"
