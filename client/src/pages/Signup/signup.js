@@ -36,14 +36,14 @@ const Signup = () => {
     event.preventDefault();
     // var ele = document.getElementsByTagName('input');
     // console.log(ele.checked)
-    // let imagelink = $('input[name="avatarCheck"]:checked').val();
-    // console.log(imagelink)
+    let imagelink = $('input[name="avatarCheck"]:checked').val();
+    console.log(imagelink)
     if (formObject.username && formObject.email && formObject.password) {
       API.saveUser({
         username: formObject.username,
         email: formObject.email,
         password: formObject.password,
-        // avatar: imagelink,
+        avatar: imagelink
       }).then((res) => {
         // console.log(res)
         // console.log(imagelink)

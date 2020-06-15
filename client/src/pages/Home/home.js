@@ -37,19 +37,36 @@ const Home = () => {
         <div className="row">
           <div className="col-md-6 col-md-offset-3">
             {/* <h2>Welcome{}</h2> */}
-            <img id="pyramid" alt="" src={pyramid} />
+   {/*  <img id="pyramid" alt="" src={pyramid} /> */}
             <br />
+            {userData.user ? (
+              
+              <div className="col s12">
+         
+              </div>
+
+            ):(
+              <>
+            <div className="col s6">
+           
+                </div>
+              </>
+            )}
+
+<div className="col s12">
             <h2 className="homeheader">Welcome to Le LouVr3D</h2>
             <h5 className="white-text">TOUCH, DIVE, &amp; EXPLORE</h5>
 
 <p className="white-text">Creating a virtual world of 3D experiences</p>
+            
+              </div>
             {userData.user ? (
               
               <div className="col s12">
               <Sidenav
               userData={userData}
               />
-            <button type="submit" className="btn btn-default" href="/login"
+              <button type="submit" className="btn btn-default" href="/login"
               onClick={handleLogout}>Logout</button>
               </div>
 
@@ -69,6 +86,16 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <footer class="page-footer">
+  
+  <div class="footer-copyright">
+    <div class="container">
+ 
+      Le LouVr3d © 2020
+   
+    </div>
+  </div>
+</footer>
     </div>
 
   )

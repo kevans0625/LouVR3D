@@ -3,22 +3,41 @@
 /* }  */
 
 .sidenav-trigger{
-  color: red;
+  color: white;
+/* align-content: center!important; */
+
 }
 
 body{
   background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url("./components/images/lelouvre.jpg");
   background-size: cover;
-  overflow: scroll;
   background-repeat: no-repeat;
   background-attachment: fixed;
   overflow: auto;
   /* color: white; */
+  text-align: left
 }
 
-
-
-
+html,body{
+  overflow: scroll!important;
+  overflow: auto!important;
+  scroll-behavior: smooth;
+}
+.margin-top{
+  margin-top: 250px!important;
+  margin-bottom: 250px!important;
+}
+.page-footer{
+  padding: 10px!important;
+  background-color:transparent!important;
+ 
+}
+.footer-copyright{
+  padding: 20px!important;
+  text-align: center;
+  /* background-color:transparent!important; */
+ 
+}
 /* .App-logo {
   height: 40vmin;
   pointer-events: none;

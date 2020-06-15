@@ -48,26 +48,28 @@ const LouVr3D = () => {
         <div className="row">
           <div className="col-md-6 col-md-offset-3">
             {/* <h2>Welcome{}</h2> */}
-            <img id="pyramid" alt="" src={pyramid} />
+   {/*  <img id="pyramid" alt="" src={pyramid} /> */}
             <br />
+            <div className="col s12 m6">
             <h2 className="homeheader">Welcome to Le LouVr3D</h2>
-            <h5>TOUCH, DIVE &amp; EXPLORE</h5>
-
-<p>View our virtual world of 3D experiences</p>
+            <h5 className="white-text">TOUCH, DIVE &amp; EXPLORE</h5>
+<p className="white-text">View our virtual world of 3D experiences</p>
+            </div>
             {userData.user ? (
-              
-              <div className="col s12">
+              <div
+>              <div className="col s12 m6">
               <Sidenav
               userData={userData}
               />
+              </div>
+              <div className="col s12">
+           
             <button type="submit" className="btn btn-default" href="/viewlouvr3d"
               onClick={handleView}>View Le LouVr3D</button>
              
   <button type="submit" className="btn btn-default" href="/viewmet"
   onClick={handleMet}>View Met Images </button>
-{/* 
-<button type="submit" className="btn btn-default" href="/viewmet"
-  onClick={handleLogout}>Log Out</button> */}
+  </div>
   </div>
             ):(
               <>

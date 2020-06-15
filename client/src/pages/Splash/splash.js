@@ -66,7 +66,7 @@ const Splash = () => {
             {/* <div className="col-md-12"> */}
             {/* <h2>Welcome{}</h2> */}
             {/* <Sidenav /> */}
-            <img id="pyramid" alt="" src={pyramid} />
+      {/*  <img id="pyramid" alt="" src={pyramid} /> */}
             <br />
             <h2 className="splashheader">Welcome to Le LouVr3D</h2>
             {userData.user ? (
@@ -83,10 +83,10 @@ const Splash = () => {
                   <button type="submit" className="btn btn-default" href="/louvr3d"
                     onClick={handleExhibit}>Le LouVr3D</button>
                 </div>
-                <div className="col s12 m12">
+                {/* <div className="col s12 m12">
                   <button type="submit" className="btn btn-default" href="/login"
                     onClick={handleLogout}>Logout</button>
-                </div>
+                </div> */}
 
                 {/* <div className="col s6">
         <button type="submit" className="btn btn-default" href="/login"

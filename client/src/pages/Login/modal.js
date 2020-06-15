@@ -40,6 +40,7 @@ class LoginModal extends Component {
         <a
           className="waves-effect waves-light btn modal-trigger"
           data-target="modal1" href="/"
+      
         >
           Login
         </a>

@@ -3,6 +3,8 @@ import React, { useState, useEffect, useContext } from "react";
 import API from "../../utils/API";
 import UserContext from "../../content/UserContext";
 import { useHistory } from "react-router-dom";
+import Sidenav from "../../components/SideNav/sidenavAlt";
+
 
 
 const Favorite = () => {
@@ -41,7 +43,10 @@ const Favorite = () => {
         <div className="row">
 
           <div className="col-md-6 col-md-3">
-            <h2 className="white-text">My Favorites</h2>
+          <Sidenav
+              userData={userData}
+              />
+               <h2 className="white-text">My Favorites</h2>
             <button type="submit" className="btn btn-default" href="/exhibit"
               onClick={handleExhibit}>Add More To Your Favorites </button>
           </div>
