@@ -5,4 +5,7 @@ router.route("/")
   .get(exhibitController.findAll);
 router.route("/:userID")
 .get(exhibitController.findById);
+router.route("/:id")
+.delete(exhibitController.remove)
+
 module.exports = router
