@@ -25,7 +25,7 @@ html,body{
 }
 .margin-top{
   margin-top: 250px!important;
-  margin-bottom: 250px!important;
+  /* margin-bottom: 250px!important; */
 }
 .page-footer{
   padding: 10px!important;

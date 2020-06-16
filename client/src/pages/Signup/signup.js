@@ -7,6 +7,7 @@ import pyramid from "../../components/images/pyramid.jpg"
 import Sidenav from "../../components/SideNav/sidenav"
 import $ from "jquery"
 
+
 const Signup = () => {
   const [users, setUsers] = useState([])
   const [formObject, setFormObject] = useState({
@@ -88,11 +89,28 @@ const Signup = () => {
               <br />
               {/* <h2>Welcome to Le LouVr3D</h2> */}
               {userData.user ? (
-                <div>
-                  <h2>{userData.user.username}, you are already logged in.</h2>
-                  <Sidenav
-                    userData={userData} />
-                </div>
+                 <div >
+                 <Sidenav
+                userData={userData}
+                />
+   <div className="col s12">
+               <div className="col m1">
+              <img
+     alt=""
+     src={pyramid}
+   className="pyramid"
+   />
+     </div>
+     <div className="col m11">
+       
+       {/* <h2 className="exhibitheader">Discover LouVr3D</h2> */}
+       {/* <h2 className="white-text">Login to Le LouVr3D</h2> */}
+   <h2 className="white-text">{userData.user.username}, you are already logged in.</h2>
+   </div>
+   </div>
+       <button type="submit" className="btn btn-default" href="/login"
+         onClick={handleLogout}>Logout</button>
+         </div>
               ) : (
                   <>
                     <h2 className="white-text">Sign Up Form</h2>

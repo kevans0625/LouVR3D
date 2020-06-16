@@ -119,14 +119,21 @@ const Exhibit = () => {
               userData={userData}
               className="right-align"
               />
+        <div className="row">
+          <div className="col-md-6 col-md-offset-3">
+          {/* <div className="col m3">
+        </div> */}
+        <div className="col m1">
         <img
           alt=""
           src={pyramid}
-        style={{alignContent: "center"}}
+        className="pyramid"
         />
-        <div className="row">
-          <div className="col-md-6 col-md-offset-3">
-            <h2 className="exhibitheader">Discover Le LouVr3D</h2>
+          </div>
+          <div className="col m10">
+            
+            <h2 className="exhibitheader">Discover LouVr3D</h2>
+        </div>
             <div className="row">
             </div>
             <button type="submit" className="btn btn-default" href="/favorites"

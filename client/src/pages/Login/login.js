@@ -5,6 +5,8 @@ import M from "materialize-css"
 import UserContext from "../../content/UserContext";
 import Modal from "../Signup/modal"
 import Sidenav from "../../components/SideNav/sidenav";
+import pyramid from "../../components/images/pyramid.jpg"
+
 
 const Login = () => {
     const [users, setUsers] = useState([])
@@ -75,19 +77,43 @@ const Login = () => {
      
 <br/>
       {userData.user ? (
-        
+           <div >
+                      <Sidenav
+                     userData={userData}
+                     />
         <div className="col s12">
+                    <div className="col m1">
+                   <img
+          alt=""
+          src={pyramid}
+        className="pyramid"
+        />
+          </div>
+          <div className="col m11">
+            
+            {/* <h2 className="exhibitheader">Discover LouVr3D</h2> */}
+            {/* <h2 className="white-text">Login to Le LouVr3D</h2> */}
         <h2 className="white-text">{userData.user.username}, you are already logged in.</h2>
-               <Sidenav
-              userData={userData}
-              />
+        </div>
+        </div>
             <button type="submit" className="btn btn-default" href="/login"
               onClick={handleLogout}>Logout</button>
               </div>
 
             ):(
               <>
-          <h2 className="white-text">Login to Le LouVr3D</h2>
+               <div className="col m1">
+                   <img
+          alt=""
+          src={pyramid}
+        className="pyramid"
+        />
+          </div>
+          <div className="col m10">
+            
+            {/* <h2 className="exhibitheader">Discover LouVr3D</h2> */}
+            <h2 className="white-text">Login to Le LouVr3D</h2>
+        </div>
 
                 <form className="signup">
       <div className="form-group">

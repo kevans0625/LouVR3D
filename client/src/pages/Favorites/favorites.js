@@ -4,6 +4,7 @@ import API from "../../utils/API";
 import UserContext from "../../content/UserContext";
 import { useHistory } from "react-router-dom";
 import Sidenav from "../../components/SideNav/sidenavAlt";
+import pyramid from "../../components/images/pyramid.jpg"
 
 
 
@@ -46,7 +47,18 @@ const Favorite = () => {
           <Sidenav
               userData={userData}
               />
-               <h2 className="white-text">My Favorites</h2>
+                  <div className="col m1">
+        <img
+          alt=""
+          src={pyramid}
+        className="pyramid"
+        />
+          </div>
+          <div className="col m10">
+            
+            <h2 className="exhibitheader">My Favorites</h2>
+        </div>
+               {/* <h2 className="white-text">My Favorites</h2> */}
             <button type="submit" className="btn btn-default" href="/exhibit"
               onClick={handleExhibit}>Add More To Your Favorites </button>
           </div>

@@ -86,7 +86,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <footer class="page-footer">
+      {/* <footer class="page-footer">
   
   <div class="footer-copyright">
     <div class="container">
@@ -95,7 +95,7 @@ const Home = () => {
    
     </div>
   </div>
-</footer>
+</footer> */}
     </div>
 
   )
