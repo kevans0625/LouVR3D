@@ -30,6 +30,13 @@ const Favorite = () => {
 
   const history = useHistory();
 
+  function deleteFavorite(id) {
+    {console.log(id)}
+    API.deleteFavorite(id)
+    .then(res => getFavorites())
+    .catch(err => console.log(err));
+  }
+
   const handleExhibit = () => {
     history.push("/exhibit")
   }
@@ -63,7 +70,10 @@ const Favorite = () => {
 
                   <div className="card-action">
                     <a href={favorite.image}>View Image on the Met yo!</a>
+                    <button type="submit" className="btn btn-default" onClick={() => deleteFavorite(favorite._id)}>Delete</button>
+                    {console.log(favorites)}
                   </div>
+
 
                 </div>
                 </div>
