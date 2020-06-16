@@ -37,10 +37,10 @@ class Modal extends Component {
     return (
       <div>
         <a
-          className="waves-effect waves-light btn modal-trigger"
-          // data-target="modal3"
+          className="waves-effect hidden waves-light btn modal-trigger"
+          data-target="modal3"
         >
-          Modal
+         Edit Profile
         </a>
 
         <div
@@ -50,21 +50,13 @@ class Modal extends Component {
           id="modal3"
           className="modal"
         >
-          {/* If you want Bottom Sheet Modal then add 
-                        bottom-sheet class to the "modal" div
-                        If you want Fixed Footer Modal then add
-                        modal-fixed-footer to the "modal" div*/}
+          <a className="modal-close waves-effect waves-green btn-flat">
+          <i className="material-icons">close</i>
+            </a>
           <div className="modal-content">
             <Avatar/>
           </div>
-          {/* <div className="modal-footer">
-            <a className="modal-close waves-effect waves-red btn-flat">
-              Disagree
-            </a>
-            <a className="modal-close waves-effect waves-green btn-flat">
-              Agree
-            </a>
-          </div> */}
+      
         </div>
       </div>
     );

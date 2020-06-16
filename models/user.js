@@ -18,7 +18,11 @@ const userSchema = new Schema({
             dropDups: true
     },
     password: {type: String, required: true},
-    avatar: {type: String}
+    avatar: {type: String},
+    bio: {type: String},
+    age: {type: String},
+    tagline: {type: String}
+
 });
 
 userSchema.plugin(uniqueValidator);

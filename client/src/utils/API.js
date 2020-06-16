@@ -19,8 +19,6 @@ export default {
     return axios.delete("/api/user/" + id);
   },
   modifyUser: function(_id, body) {
-    console.log("body " + body)
-    console.log("id " + _id)
     return axios.put("/api/user/" + _id, body);
   },
   // Saves a User to the database
