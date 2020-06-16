@@ -61,5 +61,9 @@ export default {
   },
   loadAllFavorites: function() {
     return axios.get("/api/exhibit")
-  } 
+  }, 
+  // delete favorites
+  deleteFavorite: function(id) {
+    return axios.delete("/api/exhibit/" + id)
+  }
 };
