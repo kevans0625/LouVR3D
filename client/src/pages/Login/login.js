@@ -111,7 +111,7 @@ const Login = () => {
                   <form className="signup">
                     <div className="form-group">
                       <input
-                        type="username"  
+                        // type="username"  
                         className="form-control white-text"
                         id="username-login-input"
                         placeholder="Username (required)"
