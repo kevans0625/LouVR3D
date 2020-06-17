@@ -59,7 +59,7 @@ const Signup = () => {
               user: res.data.user
             })
             localStorage.setItem("auth-token", res.data.token)
-            history.push("/splash")
+            history.push("/profile")
           })
         console.log(res)
         }
