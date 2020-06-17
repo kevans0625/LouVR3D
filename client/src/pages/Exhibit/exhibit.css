@@ -18,3 +18,9 @@ button{
     font-size: 20px!important;
     font-weight: bold!important;
 }
+
+.pyramid{
+    align-content:left!important;
+    width: 100px;
+    height: 100px;
+}

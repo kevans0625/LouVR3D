@@ -56,7 +56,7 @@ function App() {
     
     <Router>
       <UserContext.Provider value={{ userData, setUserData }}>
-    <div className="App">
+    <div className="App wrapper">
       <Switch>
       {/* <Route exact path={["/", "/users"]}/> */}
       <Route exact path="/" component={Home} />
@@ -72,6 +72,7 @@ function App() {
       <Route exact path="/concept" component={Concept} />
       {/* <Route exact path="/users/:id"/>   */}
       </Switch>
+     
     </div>
       </UserContext.Provider>
     </Router>

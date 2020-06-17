@@ -36,8 +36,7 @@ router.post("/login", async function(req, res) {
       token,
       user: {
         id: user._id,
-        displayName: user.username,
-        // avatar: user.avatar
+        username: user.username,
       },
     });
     console.log(token)
@@ -68,8 +67,13 @@ router.post("/tokenIsVerified", async (req, res) => {
 router.get("/validUser", auth, async (req, res) => {
   const user = await db.User.findById(req.user);
   res.json({
-    username: user.username,
     id: user._id,
+    username: user.username,
+    avatar: user.avatar,
+    age: user.age,
+    bio: user.bio,
+    tagline: user.tagline
+
   });
 });
 

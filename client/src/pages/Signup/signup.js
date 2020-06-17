@@ -7,6 +7,7 @@ import pyramid from "../../components/images/pyramid.jpg"
 import Sidenav from "../../components/SideNav/sidenav"
 import $ from "jquery"
 
+
 const Signup = () => {
   const [users, setUsers] = useState([])
   const [formObject, setFormObject] = useState({
@@ -36,14 +37,14 @@ const Signup = () => {
     event.preventDefault();
     // var ele = document.getElementsByTagName('input');
     // console.log(ele.checked)
-    // let imagelink = $('input[name="avatarCheck"]:checked').val();
-    // console.log(imagelink)
+    let imagelink = $('input[name="avatarCheck"]:checked').val();
+    console.log(imagelink)
     if (formObject.username && formObject.email && formObject.password) {
       API.saveUser({
         username: formObject.username,
         email: formObject.email,
         password: formObject.password,
-        // avatar: imagelink,
+        avatar: imagelink
       }).then((res) => {
         // console.log(res)
         // console.log(imagelink)
@@ -88,11 +89,28 @@ const Signup = () => {
               <br />
               {/* <h2>Welcome to Le LouVr3D</h2> */}
               {userData.user ? (
-                <div>
-                  <h2>{userData.user.username}, you are already logged in.</h2>
-                  <Sidenav
-                    userData={userData} />
-                </div>
+                 <div >
+                 <Sidenav
+                userData={userData}
+                />
+   <div className="col s12">
+               <div className="col m1">
+              <img
+     alt=""
+     src={pyramid}
+   className="pyramid"
+   />
+     </div>
+     <div className="col m11">
+       
+       {/* <h2 className="exhibitheader">Discover LouVr3D</h2> */}
+       {/* <h2 className="white-text">Login to Le LouVr3D</h2> */}
+   <h2 className="white-text">{userData.user.username}, you are already logged in.</h2>
+   </div>
+   </div>
+       <button type="submit" className="btn btn-default" href="/login"
+         onClick={handleLogout}>Logout</button>
+         </div>
               ) : (
                   <>
                     <h2 className="white-text">Sign Up Form</h2>

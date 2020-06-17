@@ -1,31 +1,51 @@
-.profileheader{
-    margin-bottom: 10px!important;
+.profileheader {
+    margin-bottom: 10px !important;
+    text-align: center;
 }
 
-.profile-avatar{
-    width: 100px!important;
-    height: 100px!important;
-    margin: 10px!important;
+.break {
+    padding: 20px !important;
+    /* margin-bottom: 1000px!important; */
 }
-.avatar-div{
- background-color: orange;
- margin: 10px!important;
- position: relative;
- width: 50%;
+
+.white {
+    background-color: white;
+    padding: 20px !important;
+    z-index: 1!important;;
 }
-.middle{
+
+.profile-avatar {
+    width: 150px !important;
+    text-align: center;
+    height: 150px !important;
+    margin: 0px !important;
+}
+
+.avatar-div {
+    /* background-color: orange; */
+    margin: 10px !important;
+    position: relative;
+    text-align: center;
+    width: 50%;
+}
+
+.middle {
     position: absolute;
     top: 10%;
+    /* text-align: center; */
     left: 52%;
 }
-.create{
-    height: 50px!important;
-    width: 50px!important;
-    color: gray;
+
+.create {
+    height: 100px !important;
+    width: 100px !important;
+    color: rgb(70, 68, 68);
 }
-.hidden{
-    display: none;
+
+.hidden {
+    z-index: 10!important;;
 }
-button{
-    margin: 10px!important;
+
+button {
+    margin: 10px !important;
 }

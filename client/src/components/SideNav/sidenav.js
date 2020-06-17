@@ -76,7 +76,7 @@ class Sidenav extends Component {
          </a>
        </li>
         </ul>
-        <a href="#!" data-target="slide-out" className="sidenav-trigger right-align">
+        <a href="#!" data-target="slide-out" className="sidenav-trigger right-align" style={{textAlign: "center"}}>
           <i className="material-icons">menu</i>
         </a>
       </div>

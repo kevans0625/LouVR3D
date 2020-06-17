@@ -52,14 +52,14 @@ module.exports = {
         },
     update: function(req, res) {
           db.User
-            .findOneAndUpdate({ _id: req.params.id }, { $set: { "avatar": req.body.avatar}})
+            .findOneAndUpdate({ _id: req.params.id }, { $set: { "avatar": req.body.avatar, "tagline": req.body.tagline, "bio": req.body.bio, "age": req.body.age}})
             .then(dbModel => {console.log("hi")
                 res.json(dbModel)})
             .catch(err => res.status(422).json(err));
         },
     remove: function(req, res) {
           db.User
-            .findById({ _id: req.params.id })
+            .findById({ _id: req.params.id})
             .then(dbModel => dbModel.remove()) 
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
