@@ -60,7 +60,7 @@ const Signup = () => {
               user: res.data.user
             })
             localStorage.setItem("auth-token", res.data.token)
-            history.push("/splash")
+            history.push("/profile")
           })
         console.log(res)
         }
@@ -70,6 +70,7 @@ const Signup = () => {
       })
     }
   }
+  
   const handleLogout = () => {
     setUserData({
       token: undefined,
@@ -118,7 +119,7 @@ const Signup = () => {
                       <div className="form-group">
                         <input
                           // type="username"  
-                          className="form-control"
+                          className="form-control white-text"
                           id="username-input"
                           placeholder="Username (required)"
                           onChange={handleInputChange}
@@ -128,7 +129,7 @@ const Signup = () => {
                       <div className="form-group">
                         <input
                           type="email"
-                          className="form-control"
+                          className="form-control white-text"
                           id="email-input"
                           placeholder="Email (required)"
                           onChange={handleInputChange}
@@ -138,13 +139,13 @@ const Signup = () => {
                       <div className="form-group">
                         <input
                           type="password"
-                          className="form-control"
+                          className="form-control white-text"
                           id="password-input"
                           placeholder="Password (required)"
                           onChange={handleInputChange}
                           name="password" />
                       </div>
-                      <h5 className="white-text">Select A Patronage Avatar</h5>
+                      {/* <h5 className="white-text">Select A Patronage Avatar</h5>
                       <p className="white-text">Be sure to hit save to submit the change</p>
                       <div className="  col s12 center">
 
@@ -205,7 +206,7 @@ const Signup = () => {
                             <span>Frida</span>
                           </label>
                         </p>
-                      </div>
+                      </div> */}
                       
                       <button type="submit" className="btn btn-default"
                         disabled={!(formObject.username || formObject.email || formObject.password)}
@@ -214,7 +215,7 @@ const Signup = () => {
                     </form>
                     <br />
                     {/* <Modal/> */}
-                    <p>Or log in <a href="/login">here</a></p>
+                    <p className="white-text" >Or log in <a  href="/login">here</a></p>
                   </>
                 )}
             </div>

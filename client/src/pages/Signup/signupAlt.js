@@ -78,6 +78,8 @@ const Signup = () => {
     //   window.location.replace("/signup");
   }
 
+
+
   return (
     <div>
       <div className="container">
@@ -126,68 +128,7 @@ const Signup = () => {
                           onChange={handleInputChange}
                           name="password" />
                       </div>
-                      {/* <h5 >Select A Patronage Avatar</h5> */}
-                      <p >Select A Patronage</p>
-                      <div className="s5 center">
-
-                        <p className="col s6 m3">
-                          <img className=" circle profile-avatar" style={{width: "100px"}}  alt="avatar1" src="https://api.adorable.io/avatars/face/eyes1" />
-                          <label>
-                            <input type="radio" name="avatarCheck" value="https://api.adorable.io/avatars/face/eyes1" />
-                            <span  >Gogh</span>
-                          </label>
-                        </p>
-                        <p className="col s6 m3">
-                          <img className=" circle profile-avatar" style={{width: "100px"}} alt="avatar2" src="https://api.adorable.io/avatars/face/eyes2" />
-                          <label >
-                            <input type="radio" name="avatarCheck" value="https://api.adorable.io/avatars/face/eyes2" />
-                            <span>Bourgeois</span>
-                          </label>
-                        </p>
-                        <p className="col s6 m3">
-                          <img className=" circle profile-avatar"  style={{width: "100px"}} alt="avatar3" src="https://api.adorable.io/avatars/face/eyes3" />
-                          <label >
-                            <input type="radio" name="avatarCheck" value="https://api.adorable.io/avatars/face/eyes3" />
-                            <span lassName="white-text">Vinci</span>
-                          </label>
-                        </p>
-                        <p className="col s6 m3">
-                          <img className="circle profile-avatar" style={{width: "100px"}} alt="avatar4" src="https://api.adorable.io/avatars/face/eyes4" />
-                          <label >
-                            <input type="radio" name="avatarCheck" value="https://api.adorable.io/avatars/face/eyes4" />
-                            <span lassName="white-text">Basquiat</span>
-                          </label>
-                        </p>
-
-                        {/* <p className="col s6 m3">
-                          <img className=" circle profile-avatar" alt="avatar5" src="https://api.adorable.io/avatars/face/eyes5" />
-                          <label>
-                            <input type="radio" name="avatarCheck" value="https://api.adorable.io/avatars/face/eyes" />
-                            <span>Monet</span>
-                          </label>
-                        </p>
-                        <p className="col s6 m3">
-                          <img className=" circle profile-avatar" alt="avatar6" src="https://api.adorable.io/avatars/face/eyes6" />
-                          <label>
-                            <input type="radio" name="avatarCheck" value="https://api.adorable.io/avatars/face/eyes6" />
-                            <span>Jules</span>
-                          </label>
-                        </p>
-                        <p className="col s6 m3">
-                          <img className=" circle profile-avatar" alt="avatar7" src="https://api.adorable.io/avatars/face/eyes7" />
-                          <label>
-                            <input type="radio" name="avatarCheck" value="https://api.adorable.io/avatars/face/eyes7" />
-                            <span>Michelangelo</span>
-                          </label>
-                        </p>
-                        <p className="col s6 m3">
-                          <img className=" circle profile-avatar" alt="avatar8" src="https://api.adorable.io/avatars/face/eyes8" />
-                          <label>
-                            <input type="radio" name="avatarCheck" value="https://api.adorable.io/avatars/face/eyes8" />
-                            <span>Frida</span>
-                          </label>
-                        </p> */}
-                      </div>
+                      
                       
                       <button type="submit" className="btn btn-default"
                         disabled={!(formObject.username || formObject.email || formObject.password)}
@@ -196,7 +137,7 @@ const Signup = () => {
                     </form>
                     <br />
                     {/* <Modal/> */}
-                    <p>Or log in <a href="/login">here</a></p>
+                    <p  >Or log in <a href="/login">here</a></p>
                   </>
                 )}
             </div>

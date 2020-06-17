@@ -4,7 +4,7 @@ export function Input(props){
  return (
      
      <div className=" form-group">
-    <input className="form-control" id="search" 
+    <input className="form-control white-text" id="search" 
     type="text" placeholder="Search"  {...props}/>
         </div>
         );

@@ -73,7 +73,6 @@ router.get("/validUser", auth, async (req, res) => {
     age: user.age,
     bio: user.bio,
     tagline: user.tagline
-
   });
 });
 

@@ -4,7 +4,7 @@ router.route("/")
   .post(exhibitController.create)
   .get(exhibitController.findAll);
 router.route("/:userID")
-.get(exhibitController.findById);
+.get(exhibitController.findById)
 router.route("/:id")
 .delete(exhibitController.remove)
 

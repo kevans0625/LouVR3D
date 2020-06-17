@@ -4,7 +4,10 @@ import "materialize-css/dist/css/materialize.min.css";
 import image2 from "../images/LouvreNight.jpg";
 import image1 from "../images/pyramid.jpg";
 
+
+
 class Sidenav extends Component {
+
   componentDidMount() {
     const options = {
       inDuration: 250,
@@ -17,6 +20,7 @@ class Sidenav extends Component {
     // instance.open();
     console.log(instance.isOpen);
   }
+
   render() {
     return (
       <div>
@@ -60,11 +64,9 @@ class Sidenav extends Component {
             <i className="material-icons">photo_library</i>Visit Le LouVr3D Exhibit
             </a>
           </li>
-          
           <li>
-         
             <a href="/">
-            <i className="material-icons">directions_run</i>Log Out
+            <i className="material-icons" onClick={this.handleLogout}>directions_run</i>Log Out
             </a>
           </li>
           <li>
