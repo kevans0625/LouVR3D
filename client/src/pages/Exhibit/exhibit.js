@@ -105,7 +105,7 @@ const Exhibit = () => {
       artist: savedImage.artist,
       department: savedImage.department,
       image: savedImage.image,
-      // userID: userData.user.id
+      userID: userData.user.id
     })
 
   }
@@ -149,6 +149,7 @@ const Exhibit = () => {
               <Input
                 name="search"
                 onChange={handleInputChange}
+                className=""
               />
               <SearchButton
                 onClick={handleFormSubmit}

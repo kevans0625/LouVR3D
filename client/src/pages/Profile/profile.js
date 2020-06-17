@@ -8,7 +8,7 @@ import API from "../../utils/API";
 import './profile.css';
 // import HomeScene from "../../components/HomeScene/index"
 import UserContext from "../../content/UserContext";
-// import ImageModal from "../Splash/ImageModal"
+import ImageModal from "../Splash/ImageModal"
 import AvatarModal from "./AvatarModal"
 import Sidenav from "../../components/SideNav/sidenav";
 
@@ -31,16 +31,17 @@ const Profile = () => {
   const history = useHistory();
 
   const handleFavorites = () => {
-  //   // history.push("/favorites")
-  //   API.loadFavorites(userData.user.id)
-  //     .then(res => {
-  //       console.log(res)
-  //       // setFavorites(res.data)
-  //     }
-  //     )
-  //     .catch(err => {
-  //       console.log(err)
-  //     });
+    console.log(userData.user.id)
+   let id = userData.user.id
+    API.findFavorites({}, { userID: id })
+      .then(res => {
+        console.log(res)
+        // setFavorites(res.data)
+      }
+      )
+      .catch(err => {
+        console.log(err)
+      });
 
   }
 
@@ -79,17 +80,19 @@ const Profile = () => {
                       <span>
                         <p><i className="social-i fas fa-tag"></i> Tagline: {userData.user.tagline}</p>
                         <p><i className="fas fa-user-edit" ></i> Bio: {userData.user.bio}</p>
-                        <p><i className="social-i fas fa-envelope-open-text"></i> Age: {userData.user.age} </p>
+                        <p><i class="fas fa-birthday-cake"></i> Age: {userData.user.age} </p>
                         <AvatarModal />
                       </span>
                     </div>
-
                   </div>
 
+                    <hr/>
                   <div className="col s12 m6">
-                    <button type="submit" className="btn btn-default" onClick={handleFavorites}>View Recent Favorites</button>
-                  </div>
+                  <p>Click below to add images to Le LouVr3d.</p>
+
+                  <ImageModal />
                 </div>
+                  </div>
               </>
             ) : (
                 <>
