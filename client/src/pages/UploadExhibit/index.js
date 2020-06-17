@@ -28,7 +28,7 @@ function UploadExhibit() {
                     <div class="card">
                         <div class="card-image">
                             <img id="displayImage" />
-                            <span class="card-title" id="title">Card Title</span>
+                            <span class="card-content" id="title"></span>
                         </div>
                     </div>
                 </div>
