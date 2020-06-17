@@ -50,6 +50,11 @@ class Sidenav extends Component {
             </a>
           </li>
           <li>
+            <a href="/profile">
+            <i className="material-icons">person</i>Profile
+            </a>
+          </li>
+          <li>
             <a href="/exhibit">
               <i className="material-icons">search</i>Discover Art 
             </a>
