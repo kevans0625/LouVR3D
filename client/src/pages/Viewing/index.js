@@ -1,13 +1,17 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useContext } from "react"
 import Exhibit from "../../components/Exhibit/index"
 import API from "../../utils/API"
+import UserContext from "../../content/UserContext"
 
 
 function Viewing() {
+    const { userData, setUserData } = useContext(UserContext);
     var [assets, setAssets] = useState()
+    console.log(userData)
+    let id = userData.user.id
 
     useEffect(() => {
-        API.loadAllFavorites()
+        API.loadFavorites(id)
             .then(res => {
                 setAssets(res.data)
             })
