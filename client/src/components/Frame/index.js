@@ -15,15 +15,14 @@ function Frame(props) {
 
   }
 
-
  
     return(
         <Entity
-        geometry={{ primitive: 'cone', radiusBottom: 1, radiusTop: 0.01, segmentsRadial: 4}}
-        material={{ roughness: 0.5,  color: "#ef6040" }}
+        geometry={{ primitive: 'box', radiusBottom: 1, radiusTop: 0.01, segmentsRadial: 4}}
+        material={{ roughness: 0.5, src: "url(https://cors-anywhere.herokuapp.com/" + props.src +")"}}
         position="0 2 0"
         id={props.id}
-        animation={{ property: "rotation", to: "0 360 0", loop: true, dur: 3000, easing: "linear" }}
+        animation={{ property: "rotation", to: "0 180 0", loop: true, dur: 8000, easing: "linear" }}
         events={{click: handleClick}}
       />
     )
