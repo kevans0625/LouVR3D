@@ -11,22 +11,23 @@ import pyramid from "../../components/images/pyramid.jpg"
 const Favorite = () => {
   const { userData, setUserData } = useContext(UserContext);
   const [favorites, setFavorites] = useState([])
-
+  console.log(userData)
   useEffect(() => {
     // setTimeout(getFavorites(), 5000)
-    getFavorites()
+    // getFavorites()
   }, [])
   function getFavorites() {
-    console.log("hey")
-    // let id = userData.user.id
-    API.loadAllFavorites()
+    console.log(userData.user.id)
+    let id = userData.user.id
+    API.loadFavorites(id)
       .then(res => {
-        console.log(res)
+        console.log(res.data)
         setFavorites(res.data)
       }
       )
       .catch(err => {
         console.log(err)
+        console.log(userData)
       });
   };
   console.log(favorites);
@@ -69,6 +70,7 @@ const Favorite = () => {
             <button type="submit" className="btn btn-default" href="/exhibit"
               onClick={handleExhibit}>Add More To Your Favorites </button>
           </div>
+          <button onClick={getFavorites}>click</button>
 
           {favorites ? (
             <div className="col">

@@ -9,6 +9,7 @@ import "./exhibit.css"
 
 function Exhibit(props) {
     const art = props.art
+    console.log(props)
     return (
         <div>
             <Scene>

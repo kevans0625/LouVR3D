@@ -51,12 +51,14 @@ export default {
   },
   // Save image to mongo
   saveImage: function(imageData) {
+    console.log(imageData)
     return axios.post("/api/exhibit", imageData)
+    
   },
   // Load favorites
-  loadFavorites: function(userID) {
-    console.log(userID)
-    return axios.get("/api/exhibit", userID)
+  loadFavorites: function(id) {
+    console.log(id)
+    return axios.get("/api/exhibit/" + id)
   },
   loadAllFavorites: function() {
     return axios.get("/api/exhibit")
