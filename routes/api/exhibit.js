@@ -3,9 +3,8 @@ const exhibitController = require("../../controllers/exhibitController")
 router.route("/")
   .post(exhibitController.create)
   .get(exhibitController.findAll);
-router.route("/:userID")
-.get(exhibitController.findById)
 router.route("/:id")
-.delete(exhibitController.remove)
+.get(exhibitController.findById)
+.delete(exhibitController.remove);
 
 module.exports = router
