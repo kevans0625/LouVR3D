@@ -10,7 +10,11 @@ const PORT = process.env.PORT || 3001;
 
 app.use(cors());
 
-//fot loggging details to the server
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  next();
+});
+//for loggging details to the server
 app.use(morgan('dev'))
 
 // Define middleware here
