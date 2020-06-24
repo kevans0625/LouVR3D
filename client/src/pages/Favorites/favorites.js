@@ -45,6 +45,9 @@ const Favorite = () => {
     history.push("/exhibit")
   }
 
+  const handle3D = () => {
+    history.push("/view")
+  }
   return (
     <div>
       <div className="container ">
@@ -69,8 +72,10 @@ const Favorite = () => {
                {/* <h2 className="white-text">My Favorites</h2> */}
             <button type="submit" className="btn btn-default" href="/exhibit"
               onClick={handleExhibit}>Add More To Your Favorites </button>
+              
+            <button type="submit" className="btn btn-default" onClick={getFavorites}>View Favorites in 2D</button>
+            <button type="submit" className="btn btn-default" href="/view" onClick={handle3D}>View Favorites in 3D</button>
           </div>
-          <button onClick={getFavorites}>click</button>
 
           {favorites ? (
             <div className="col">
