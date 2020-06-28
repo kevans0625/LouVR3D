@@ -23,12 +23,12 @@ function UploadExhibit() {
     return (
         <div>
             {assets ? (<BucketExhibit art={assets} environment="egypt" />) : (<div />)}
-            <div class="row" id="info">
-                <div class="col s12 m7">
-                    <div class="card">
-                        <div class="card-image">
+            <div className="row" id="info">
+                <div className="col s12 m7">
+                    <div className="card">
+                        <div className="card-image">
                             <img id="displayImage" />
-                            <span class="card-content" id="title"></span>
+                            <span className="card-content" id="title"></span>
                         </div>
                     </div>
                 </div>

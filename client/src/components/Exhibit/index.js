@@ -23,12 +23,13 @@ function Exhibit(props) {
                 </a-assets>
                 <Entity layout="type: circle; plane: xz; radius: 5;" position="0 2 0">
                     {art.map((painting, index) => {
-                        return (<Frame image={`#src${index}`} id={painting.title} src={painting.image} />)
+                        console.log(painting)
+                        return (<Frame image={`#src${index}`} id={painting.title} src={painting.image} key={painting.key} />)
                     })}
                 </Entity>
             </Scene>
             {art.map((asset, index) => {
-                return ( <img src={asset.image}/>)
+                return ( <img src={asset.image} key={index} />)
             })}
         </div>
     )

@@ -12,6 +12,8 @@ import Favorites from './pages/Favorites/favorites';
 import LouVr3d from './pages/LeLouvr3d/louvr3d';
 import UserContext from "../src/content/UserContext";
 import Viewing from "./pages/Viewing/index";
+import DepartmentSearch from "./pages/Departments/index";
+import deptExhibit from "./pages/Departments/deptExhibit";
 import UploadExhibit from "./pages/UploadExhibit/index";
 import Concept from "./pages/Concept/index";
 import Axios from "axios";
@@ -64,10 +66,12 @@ function App() {
       <Route exact path="/signup" component={Signup} />
       <Route exact path="/splash" component={Splash} />
       <Route exact path="/profile" component={Profile} /> 
-      <Route exact path="/exhibit" component={Exhibit} />
+      <Route exact path="/search" component={Exhibit} />
       <Route exact path="/favorites" component={Favorites} />
       <Route exact path="/louvr3d" component={LouVr3d} />
       <Route exact path="/view" component={Viewing} />
+      <Route exact path="/departments" component={DepartmentSearch} />
+      <Route exact path="/exhibit" component={deptExhibit} />
       <Route exact path="/upload" component={UploadExhibit} />
       <Route exact path="/concept" component={Concept} />
       {/* <Route exact path="/users/:id"/>   */}
