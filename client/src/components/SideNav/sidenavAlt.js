@@ -48,7 +48,7 @@ class SidenavAlt extends Component {
             </a>
           </li>
           <li>
-            <a href="/exhibit">
+            <a href="/search">
               <i className="material-icons">search</i>Discover Art
             </a>
           </li>

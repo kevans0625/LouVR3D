@@ -3,12 +3,12 @@ import "aframe"
 import "aframe-layout-component"
 import "aframe-environment-component"
 import { Entity, Scene } from 'aframe-react'
-import Frame from "../Frame"
+import FrameAlt from "../Frame/deptIndex"
 import Camera from "../Camera"
 import "./exhibit.css"
 
 function Exhibit(props) {
-    const art = props.art
+    const art = props.departments
     console.log(props)
     return (
         <div>
@@ -16,15 +16,14 @@ function Exhibit(props) {
                 <Entity environment={`preset: ${props.environment}`} />
                 <Camera />
                 <Entity light={{ type: "ambient", color: "#BBB" }} />
-                <a-assets timeout="3000">
+                {/* <a-assets timeout="3000">
                     {art.map((asset, index)=>{
                         return(<img src={asset.image} id={`src${index}`} key={index} />)
                     })}
-                </a-assets>
+                </a-assets> */}
                 <Entity layout="type: circle; plane: xz; radius: 5;" position="0 2 0">
                     {art.map((painting, index) => {
-                        console.log(painting)
-                        return (<Frame image={`#src${index}`} id={painting.title} src={painting.image} key={painting.key} />)
+                        return (<FrameAlt image={`#src${index}`} id={painting.title} src={painting.image} />)
                     })}
                 </Entity>
             </Scene>

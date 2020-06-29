@@ -162,23 +162,18 @@ const Exhibit = () => {
               {displayArt.map(exhibit => (
                 <div className="col s12 m6 ">
                 <div className="card">
-
                   <div className="card-image">
                     <img alt="" src={exhibit.image} />
                     <DeleteBtn onClick={() => addArt(exhibit.key)} className="secondary-content" />
                   </div>
-
                   <div className="card-content">
                     <span> <h5>{exhibit.title} by {exhibit.artist ? (exhibit.artist) : ("Artist Unknown")}</h5></span>
                   </div>
-
                   <div className="card-action">
                     <a href={exhibit.image}>View Image on the Met yo!</a>
-                        
                   </div>
-
                 </div>
-                </div>
+               </div>
               ))}
             </div>
 

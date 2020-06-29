@@ -86,10 +86,10 @@ const Home = () => {
           </div>
         </div>
       </div>
-      {/* <footer class="page-footer">
+      {/* <footer className="page-footer">
   
-  <div class="footer-copyright">
-    <div class="container">
+  <div className="footer-copyright">
+    <div className="container">
  
       Le LouVr3d © 2020
    

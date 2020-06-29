@@ -80,7 +80,7 @@ const Profile = () => {
                       <span>
                         <p><i className="social-i fas fa-tag"></i> Tagline: {userData.user.tagline}</p>
                         <p><i className="fas fa-user-edit" ></i> Bio: {userData.user.bio}</p>
-                        <p><i class="fas fa-birthday-cake"></i> Age: {userData.user.age} </p>
+                        <p><i className="fas fa-birthday-cake"></i> Age: {userData.user.age} </p>
                         <AvatarModal />
                       </span>
                     </div>

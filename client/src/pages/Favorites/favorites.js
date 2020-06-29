@@ -42,7 +42,7 @@ const Favorite = () => {
   }
 
   const handleExhibit = () => {
-    history.push("/exhibit")
+    history.push("/search")
   }
 
   const handle3D = () => {
@@ -70,7 +70,7 @@ const Favorite = () => {
             <h2 className="exhibitheader">My Favorites</h2>
         </div>
                {/* <h2 className="white-text">My Favorites</h2> */}
-            <button type="submit" className="btn btn-default" href="/exhibit"
+            <button type="submit" className="btn btn-default" href="/search"
               onClick={handleExhibit}>Add More To Your Favorites </button>
               
             <button type="submit" className="btn btn-default" onClick={getFavorites}>View Favorites in 2D</button>

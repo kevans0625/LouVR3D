@@ -1,8 +1,7 @@
 import axios from "axios";
 const METURL = "https://collectionapi.metmuseum.org/public/collection/v1/search?hasImages=true&q=";
 const METOBJECTURL = "https://collectionapi.metmuseum.org/public/collection/v1/objects/";
-const harvardAPI = "";
-const harvardAPIKey = "5e4cb7f0-a534-11ea-888a-71ff56d3b1a0";
+const METDepartmentURL = "https://collectionapi.metmuseum.org/public/collection/v1/objects?hasImages=true&departmentIds=";
 
 export default {
   // Gets all users
@@ -48,6 +47,9 @@ export default {
   },
   getMetImages: function(id){
     return axios.get(METOBJECTURL+ id)
+  },
+  getDepartments: function(id){
+    return axios.get(METDepartmentURL+ id)
   },
   // Save image to mongo
   saveImage: function(imageData) {

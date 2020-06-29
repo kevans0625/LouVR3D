@@ -22,16 +22,16 @@ function Viewing() {
             })
     }, [])
 
-
+console.log(assets)
     return (
         <div>
             {assets ? (<Exhibit art={assets} environment="egypt" />) : (<div />)}
-            <div class="row" id="info">
-                <div class="col s12 m7">
-                    <div class="card">
-                        <div class="card-image">
+            <div className="row" id="info">
+                <div className="col s12 m7">
+                    <div className="card">
+                        <div className="card-image">
                             <img id="displayImage" />
-                            <span class="card-title" id="title">Card Title</span>
+                            <span className="card-title" id="title">Card Title</span>
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,11 @@
+.info{
+    z-index: auto;
+}
+
+.hidden{
+    /* display: none!important */
+}
+
+.show{
+   /* display: none */
+}
