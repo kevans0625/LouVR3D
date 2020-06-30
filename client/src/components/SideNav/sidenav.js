@@ -74,6 +74,11 @@ class Sidenav extends Component {
             <i className="material-icons" onClick={this.handleLogout}>directions_run</i>Log Out
             </a>
           </li>
+       <li>
+         <a href="/departments">
+         <i className="material-icons">3d_rotation</i>3D Departments!
+         </a>
+       </li>
           <li>
             <div className="divider" />
           </li>
