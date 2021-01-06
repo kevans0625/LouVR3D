@@ -30,7 +30,7 @@
     "aframe-layout-component": "^5.3.0",
     "aframe-react": "^4.4.0",
     "aws-sdk": "^2.683.0",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "bcrypt": "^4.0.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
